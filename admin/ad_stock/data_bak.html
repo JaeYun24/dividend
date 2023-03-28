@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 배당조회서비스</title>
+<link rel="stylesheet" type="text/css" href="../../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<script src="../../js/libs/jquery.min.js"></script>
+<script src="../../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="scr-cust">
+		<h1 class="logo"><a href="index.html"><span class="mark">SAMSUNG</span><span class="tt">배당조회서비스</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<ul class="gnb-depth1 infit">
+					<li>
+						<a href="javascript:void(0);" class="arrow">주식 관련 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_stock/data.html">주주 데이터</a></li>
+							<li><a href="../ad_stock/update.html">주주정보 업데이트</a></li>
+							<li><a href="../ad_stock/update_list.html">업데이트 내역</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">회원 관련</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_mem/info.html">회원 정보</a></li>
+							<li><a href="../ad_mem/inflow.html">회원 유입 현황</a></li>
+							<li><a href="../ad_mem/mail.html">메일 발송</a></li>
+							<li><a href="../ad_mem/sms.html">문자 발송</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">게시판 관리</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_board/notice.html">공지사항</a></li>
+							<li><a href="../ad_board/faq.html">자주하는 질문</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">약관</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_terms/condition.html">이용약관</a></li>
+							<li><a href="../ad_terms/personal.html">개인정보취급방침</a></li>
+							<li><a href="../ad_terms/email.html">이메일무단수집거부</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">로그 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_log/log_list.html">관리자 로그 기록</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="gnb-footer">
+				<div class="tnb">
+					<ul>
+						<li><a href="../../main/index.html">배당조회서비스 홈페이지</a></li>
+						<li><a href="#">관리자 로그아웃</a></li>
+					</ul>
+				</div>
+				<div class="copy arl">© SAMSUNG</div>
+			</div>
+		</nav>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="contents">
+			<div class="cont-tit">
+				<h2>주주 데이터</h2>
+				<div class="page-root">
+					<span>홈</span>
+					<span class="bar">/</span>
+					<span>주식 관련 정보</span>
+					<span class="bar">/</span>
+					<span>주주 데이터</span>
+				</div>
+			</div>
+			<section class="cont-sec">
+				<div class="sec-top">
+					<div class="ex">총 <b>459</b>개의 <b>2020</b>년도 <b>3</b>분기 <strong class="point">주주 데이터</strong> 입니다.</div>
+					<div class="nav infit">
+						<input type="text" name="pgNum" id="pgNum" value="1" class="arr-btn arl" >
+						<span class="arl">of 963,622</span>
+						<button type="button" class="arr-btn prev" >prev</button>
+						<button type="button" class="arr-btn next" >next</button>
+					</div>
+				</div>
+				<div class="sec-con">
+					<!-- [s] 검색영역 -->
+					<div class="search-con infit">
+						<ul>
+							<li class="select-btn">
+								<p class="tt">년도</p>
+								<div class="select-tit"><span class="arl">2020</span></div>
+								<div class="select-box scr-cust">
+									<a href="javascript:void(0);">2020</a>
+									<a href="javascript:void(0);">2019</a>
+									<a href="javascript:void(0);">2018</a>
+									<a href="javascript:void(0);">2017</a>
+									<a href="javascript:void(0);">2016</a>
+									<a href="javascript:void(0);">2015</a>
+								</div>
+							</li>
+							<li class="select-btn">
+								<p class="tt">분기</p>
+								<div class="select-tit"><span>3분기</span></div>
+								<div class="select-box scr-cust">
+									<a href="javascript:void(0);">1분기</a>
+									<a href="javascript:void(0);">2분기</a>
+									<a href="javascript:void(0);">3분기</a>
+									<a href="javascript:void(0);">4분기</a>
+								</div>
+							</li>
+						</ul>
+						<div class="sc-wp">
+							<select name="scSel" id="scSel" class="select-basic">
+								<option value="이름">이름</option>
+								<option value="생년월일">생년월일</option>
+								<option value="증권사">증권사</option>
+							</select>
+							<label for="scSel" class="hidden">분류선택</label>
+							<input type="text" name="scInp" id="scInp" value="" placeholder="검색어를 입력하세요." class="input-basic">
+							<label for="scInp" class="hidden">검색입력</label>
+							<button class="btn-sc">검색</button>
+						</div>
+					</div>
+					<!-- [e] 검색영역 -->
+					<!-- [s] 리스트영역 -->
+					<div class="tb-con">
+						<div class="tb-list scroll scr-cust2">
+							<table>
+								<caption class="hidden">주주데이터</caption>
+								<colgroup>
+									<col width="50">
+									<col width="10%">
+									<col width="auto">
+									<col width="12%">
+									<col width="12%">
+									<col width="11%">
+									<col width="11%">
+									<col width="11%">
+								</colgroup>
+								<thead class="fixed-top">
+									<tr>
+										<th width="50">
+					                        <input type="checkbox" name="dataChk_all" value="" id="dataChk_all" class="chk wht">
+					        				<label for="dataChk_all" class="chk-label">전체체크</label>
+										</th>
+										<th width="10%">No.</th>
+										<th width="auto">이름</th>
+										<th width="12%">생년월일</th>
+										<th width="12%">구분</th>
+										<th width="11%">보통주</th>
+										<th width="11%">우선주</th>
+										<th width="11%">증권사</th>
+									</tr>
+								</thead>
+								<tbody class="tb-body">
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_1" class="chk">
+										   <label for="dataChk_1" class="chk-label">체크1</label>
+										</td>
+										<td class="arl">459</td>
+										<td class="tit tal">홍길동</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">-</td>
+										<td class="arl">10</td>
+										<td>삼성</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_2" class="chk">
+										   	<label for="dataChk_2" class="chk-label">체크2</label>
+										</td>
+										<td class="arl">458</td>
+										<td class="tit tal">김으뜸</td>
+										<td class="arl">780201-1</td>
+										<td>법인</td>
+										<td class="arl">-</td>
+										<td class="arl">10</td>
+										<td>신한</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_3" class="chk">
+										   	<label for="dataChk_3" class="chk-label">체크3</label>
+										</td>
+										<td class="arl">457</td>
+										<td class="tit tal">아바다</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">10</td>
+										<td class="arl">-</td>
+										<td>카카오</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_4" class="chk">
+										   	<label for="dataChk_4" class="chk-label">체크4</label>
+										</td>
+										<td class="arl">456</td>
+										<td class="tit tal">애드워드 브라운 토마스</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">-</td>
+										<td class="arl">40</td>
+										<td>KB</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_5" class="chk">
+										    <label for="dataChk_5" class="chk-label">체크5</label>
+										</td>
+										<td class="arl">455</td>
+										<td class="tit tal">크리에이티브클라우드시스템즈코리아유한회사</td>
+										<td class="arl">780201-1</td>
+										<td>법인</td>
+										<td class="arl">20</td>
+										<td class="arl">10</td>
+										<td>키움</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_6" class="chk">
+										   	<label for="dataChk_6" class="chk-label">체크6</label>
+										</td>
+										<td class="arl">454</td>
+										<td class="tit tal">도레미</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">-</td>
+										<td class="arl">100</td>
+										<td>미래에셋</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_7" class="chk">
+										   	<label for="dataChk_7" class="chk-label">체크7</label>
+										</td>
+										<td class="arl">453</td>
+										<td class="tit tal">송사리</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">-</td>
+										<td class="arl">10</td>
+										<td>신한</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_8" class="chk">
+										   	<label for="dataChk_8" class="chk-label">체크8</label>
+										</td>
+										<td class="arl">452</td>
+										<td class="tit tal">다라마바애드(주)</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">20</td>
+										<td class="arl">-</td>
+										<td>NH</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_9" class="chk">
+										   	<label for="dataChk_9" class="chk-label">체크9</label>
+										</td>
+										<td class="arl">451</td>
+										<td class="tit tal">(주)에이비씨디이에프지텍</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">-</td>
+										<td class="arl">10</td>
+										<td>카카오</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_10" class="chk">
+										   	<label for="dataChk_10" class="chk-label">체크10</label>
+										</td>
+										<td class="arl">450</td>
+										<td class="tit tal">홍길동</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">-</td>
+										<td class="arl">30</td>
+										<td>키움</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_11" class="chk">
+										   	<label for="dataChk_11" class="chk-label">체크11</label>
+										</td>
+										<td class="arl">449</td>
+										<td class="tit tal">홍길동</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">5</td>
+										<td class="arl">-</td>
+										<td>KB</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox" name="dataChk" value="" id="dataChk_12" class="chk">
+										   	<label for="dataChk_12" class="chk-label">체크12</label>
+										</td>
+										<td class="arl">448</td>
+										<td class="tit tal">홍길동</td>
+										<td class="arl">780201-1</td>
+										<td>내외국인</td>
+										<td class="arl">-</td>
+										<td class="arl">10</td>
+										<td>신한</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- [e] 리스트영역 -->
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<script src="../js/admin.js"></script>
+<script>
+$(document).ready(function () {
+	//전체체크
+	$("input[name=dataChk_all]").click(function(){
+		if ($(this).is(':checked')) {
+			$("input[name=dataChk]").prop("checked", true);
+		} else {
+			$("input[name=dataChk]").prop("checked", false);
+		}
+	});
+
+});
+</script>
+</body>
+</html>

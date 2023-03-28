@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 배당조회서비스</title>
+<link rel="stylesheet" type="text/css" href="../../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<script src="../../js/libs/jquery.min.js"></script>
+<script src="../../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="scr-cust">
+		<h1 class="logo"><a href="index.html"><span class="mark">SAMSUNG</span><span class="tt">배당조회서비스</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<ul class="gnb-depth1 infit">
+					<li>
+						<a href="javascript:void(0);" class="arrow">주식 관련 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_stock/data.html">주주 데이터</a></li>
+							<li><a href="../ad_stock/update.html">주주정보 업데이트</a></li>
+							<li><a href="../ad_stock/update_list.html">업데이트 내역</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">회원 관련</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_mem/info.html">회원 정보</a></li>
+							<li><a href="../ad_mem/inflow.html">회원 유입 현황</a></li>
+							<li><a href="../ad_mem/mail.html">메일 발송</a></li>
+							<li><a href="../ad_mem/sms.html">문자 발송</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">게시판 관리</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_board/notice.html">공지사항</a></li>
+							<li><a href="../ad_board/faq.html">자주하는 질문</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">약관</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_terms/condition.html">이용약관</a></li>
+							<li><a href="../ad_terms/personal.html">개인정보취급방침</a></li>
+							<li><a href="../ad_terms/email.html">이메일무단수집거부</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">로그 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_log/log_list.html">관리자 로그 기록</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="gnb-footer">
+				<div class="tnb">
+					<ul>
+						<li><a href="../../main/index.html">배당조회서비스 홈페이지</a></li>
+						<li><a href="#">관리자 로그아웃</a></li>
+					</ul>
+				</div>
+				<div class="copy arl">© SAMSUNG</div>
+			</div>
+		</nav>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="contents">
+			<div class="cont-tit">
+				<h2>메일 작성</h2>
+				<div class="page-root">
+					<span>홈</span>
+					<span class="bar">/</span>
+					<span>회원 관련</span>
+					<span class="bar">/</span>
+					<span>메일 발송</span>
+					<span class="bar">/</span>
+					<span>수정</span>
+				</div>
+			</div>
+			<section class="cont-sec">
+				<div class="sec-top">
+					<div class="btn-area infit">
+						<button type="button" onclick="location.href='mail.html'" class="btn-norm" >목록</button>
+						<button type="button" class="btn-norm gray" >수정</button>
+					</div>
+				</div>
+				<div class="sec-con">
+					<!-- [s] 등록 영역 -->
+					<div class="write-con">
+						<!-- 기본정보 -->
+						<div class="stit">기본 정보</div>
+						<div class="cont">
+							<ul class="wform perc">
+								<li>
+									<p class="tt">제목</p>
+									<div class="inp">
+										<input type="text" name="mTitle" id="mTitle" class="input-basic" value="배당조회서비스 시스템 정기 점검 안내 (2020-06-11 23:59 ~ 2020-06-12 05:00)" >
+										<label for="mTitle" class="hidden">제목입력</label>
+									</div>
+								</li>
+								<li>
+									<p class="tt">발신자 메일</p>
+									<div class="inp">
+										<input type="text" name="mPw" id="mSender" class="input-basic" value="samsung@samsung.com">
+										<label for="mSender" class="hidden">이메일입력</label>
+									</div>
+								</li>
+							</ul>
+							<div class="gry-box">
+								<div class="tit">수신 회원 설정</div>
+								<ul>
+									<li>
+										<p class="tt">회원 구분</p>
+										<div class="inp">
+											<select name="memClass" id="memClass" class="select-basic w160">
+												<option value="전체회원">전체회원</option>
+												<option value="내국인">내국인</option>
+												<option value="법인">법인</option>
+											</select>
+											<label for="memClass" class="hidden">회원구분</label>
+										</div>
+									</li>
+									<li>
+										<p class="tt">보유 주식 종류 및 기준</p>
+										<dl>
+											<dt>
+												<input type="checkbox" name="stkCls" id="stkCls_1" class="tchk">
+												<label for="stkCls_1" class="tchk-label ">우선주</label>
+											</dt>
+											<dd>
+												<input type="text" name="mPw" id="mSender" class="input-basic" value="1,000">
+												<label for="mSender" class="hidden">우선주값</label>
+												<span class="ex">주 이상 주주</span>
+											</dd>
+										</dl>
+										<dl class="mr0">
+											<dt>
+												<input type="checkbox" name="stkCls" id="stkCls_2" class="tchk">
+												<label for="stkCls_2" class="tchk-label ">보통주</label>
+											</dt>
+											<dd>
+												<input type="text" name="mPw" id="mSender" class="input-basic" value="1,000">
+												<label for="mSender" class="hidden">보통주</label>
+												<span class="ex">주 이상 주주</span>
+											</dd>
+										</dl>
+										<button type="button" class="send-num btn-norm blk">예상 메일 발송 수 확인</button>
+									</li>
+								</ul>
+								<!-- 발송수확인 -->
+								<div class="ext-num">해당 메일은 총 <b class="arl point">1,401,000</b> 회원에게 전송됩니다.</div>
+							</div>
+						</div>
+
+						<!-- 내용 -->
+						<div class="cont-text mt20">
+							<div class="stit">내용</div>
+							<div class="cont">
+								<div class="editor"><!--에디터영역--></div>
+							</div>
+						</div>
+
+					</div>
+					<!-- [e] 등록 영역 -->
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<script src="../js/admin.js"></script>
+<script>
+$(document).ready(function () {
+	//전체체크
+	$(".send-num").click(function(){
+		$(".ext-num").show();
+	});
+
+});
+</script>
+</body>
+</html>

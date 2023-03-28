@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 삼성전자 배당조회</title>
+<link rel="stylesheet" type="text/css" href="../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/import.css">
+<script src="../js/libs/jquery.min.js"></script>
+<script src="../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/layout.css">
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/layout_1024.css">
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/layout_720.css">
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper" class="main-page">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="header main">
+		<h1 class="logo"><a href="index.html"><span class="mark">SAMSUNG</span><span class="tt">삼성전자 배당조회</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<div class="mgnb-logo mob-ver"><a href="../main/index.html"><img src="../images/logo.png" alt="SAMSUNG"><span>삼성전자 배당조회</span></a></div>
+				<ul class="gnb-depth1 infit">
+					<li><a href="../intro/intro.html">소개</a></li>
+					<li>
+						<a href="../mypage/dividend.html" class="arrow">마이페이지</a>
+						<ul class="gnb-depth2">
+							<li><a href="../mypage/dividend.html">배당 조회</a></li>
+							<li><a href="../mypage/edit.html">내 정보 수정</a></li>
+							<li><a href="../mypage/out.html">회원 탈퇴</a></li>
+						</ul>
+					</li>
+					<li><a href="../stock/info.html">주식정보</a></li>					
+					<li>
+						<a href="../customer/notice.html" class="arrow">문의</a>
+						<ul class="gnb-depth2">
+							<li><a href="../customer/faq.html">자주하는 질문</a></li>
+							<li><a href="../customer/qna.html">Contact us</a></li>
+						</ul>
+					</li>
+					<li><a href="../customer/notice.html">공지</a></li>
+				</ul>
+			</div>
+			<!-- 로그인전 -->
+			<div class="tnb"><!-- // 로그인후 class="is-login" 추가 -->
+				<ul class="infit">
+					<li><a href="../member/join_agree.html" class="join">회원가입</a></li>
+					<li class="rbtn"><a href="javascript:popupOpen('.layer-login');">로그인</a></li>
+				</ul>
+			</div>
+			<!-- // 로그인후 (일반회원/인증회원) -->
+			<!--
+			<div class="tnb is-login">
+				<ul class="infit">
+					<li>
+						<div class="info nom-mem">
+							<span>김으뜸님</span>
+							<span>일반회원</span>
+						</div>
+						<div class="info stk-mem">
+							<span>김으뜸님</span>
+							<span>인증회원</span>
+						</div>
+					</li>
+					<li class="rbtn"><a href="#">로그아웃</a></li>
+				</ul>
+			</div>
+			-->
+			<div class="mgnb-foot mob-ver">© 2020 SAMSUNG All Rights Reserved.</div>
+		</nav>
+
+		<a href="javascript:void(0);" class="mgnb-open">
+		  <label>모바일 전체메뉴</label>
+		  <span class="header-button-item top"></span>
+		  <span class="header-button-item middle"></span>
+		  <span class="header-button-item bottom"></span>
+	  	</a>
+		<div class="dim"></div>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="main-content">
+			<section class="main-intro">
+				<div class="main-visual"></div>
+				<div class="inner">
+					<h2 class="main-title"> 삼성전자 배당조회 서비스</h2>
+					<div class="main-info infit">
+						<!-- [s] 주가정보 -->
+						<div class="stk-info">
+							<div class="lcon">
+								<h3>삼성전자 주가 정보</h3>
+								<span class="st arl date">2020-07-09 17:00(KST)</span>
+								<a href="../stock/info.html" class="more"><span>더 보기</span></a>
+							</div>
+							<div class="rcon">
+								<div class="prc up"><strong class="arl">53,800</strong><span>원</span></div><!-- 상승시 'up' 하강시 'down' -->
+								<dl>
+									<dt>전일대비</dt>
+									<dd><span class="arl">+400</span>원</dd>
+									<dt>일등락률</dt>
+									<dd><span class="arl">+0.38%</span></dd>
+								</dl>
+							</div>
+						</div>
+						<!-- [e] 주가정보 -->
+
+						<!-- [s] 배당정보 -->
+						<!-- 로그인전 -->
+						<div class="dvd-info" >
+							<div class="lcon">
+								<h3>배당 정보</h3>
+								<span class="st">해당 서비스는 <b>로그인</b>이 필요합니다.</span>
+							</div>
+							<div class="rcon">
+								<a href="javascript:popupOpen('.layer-login');" class="login">로그인</a>
+							</div>
+						</div>
+						<!-- // 로그인후 -->
+						<!--
+						<div class="dvd-info is-login">
+							<div class="lcon">
+								<h3>배당 정보</h3>
+								<span class="st"><b>김으뜸님</b>의 <b>2020년 4분기</b> 배당금 내역입니다.</span>
+								<a href="#" class="more wht"><span>더 보기</span></a>
+							</div>
+							<div class="rcon">
+								<div class="prc"><strong class="arl">120,000</strong><span>원</span></div>
+								<dl>
+									<dt>보통주</dt>
+									<dd><span class="arl">80,000</span>원</dd>
+									<dt>우선주</dt>
+									<dd><span class="arl">40,000</span>원</dd>
+								</dl>
+							</div>
+						</div>
+						-->
+						<!-- [e] 배당정보 -->
+					</div>
+					<div class="main-ex infit">
+						<h3>삼성전자 <br class="mob-ver">배당조회 서비스란?</h3>
+						<div class="ex">
+							삼성전자 주식을 보유하신 주주분들이 배당내역을 확인하실 수 있는 Web서비스 입니다.
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="main-notice">
+				<div class="inner">
+					<div class="tit">
+						<h3>공지</h3>
+						<p class="st">배당 관련 소식을 전합니다</p>
+						<a href="../customer/notice.html" class="more"><span>더 보기</span></a>
+					</div>
+					<div class="ntc-list">
+						<ul>
+							<li>
+								<a href="#" class="title">[멤버십] 개인정보처리방침 변경 안내[멤버십] 개인정보처리방침 변경 안내[멤버십] 개인정보처리방침 변경 안내[멤버십] 개인정보처리방침 변경 안내[멤버십] 개인정보처리방침 변경 안내[멤버십] 개인정보처리방침 변경 안내</a>
+								<span class="date">2020-07-01</span>
+							</li>
+							<li>
+								<a href="#" class="title">[멤버십] 개인정보처리방침 변경 안내</a>
+								<span class="date">2020-07-01</span>
+							</li>
+							<li>
+								<a href="#" class="title">[멤버십] 개인정보처리방침 변경 안내</a>
+								<span class="date">2020-07-01</span>
+							</li>
+							<li>
+								<a href="#" class="title">[멤버십] 개인정보처리방침 변경 안내</a>
+								<span class="date">2020-07-01</span>
+							</li>
+							<li>
+								<a href="#" class="title">[멤버십] 개인정보처리방침 변경 안내</a>
+								<span class="date">2020-07-01</span>
+							</li>
+							<!--<li class="none">게시글이 존재하지 않습니다.<li>-->
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+	<!-- [s] Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>SAMSUNG</h2>
+			<div class="foot-content">
+				<ul class="foot-menu infit">
+					<li><a href="/terms/personal"><b>개인정보처리방침</b></a></li>
+					<li><a href="javascript:popupOpen('.layer-condition');">이용약관</a></li>
+					<li><a href="/terms/email">이메일무단수집거부</a></li>
+					<li><a href="javascript:popupOpen('.layer-sitemap');">사이트맵</a></li>
+				</ul>
+				<div class="foot-info">
+					경기도 수원시 영통구 삼성로 129 (매탄동) 삼성전자 주식회사 <br class="mob-ver"><span class="pc-ver">ㅣ</span>대표이사 김기남<span>ㅣ</span>사업자등록번호 124-81-00998 <a href="javascript:void(0);" title="사업자정보확인 사이트로 이동" onclick="javascript:footerlink();">사업자정보확인</a> <br class="mob-ver"><br class="pc-ver">대표전화 1811-6565<span>ㅣ</span>이메일 dividend@samsung.com
+				</div>
+				<copy>Copyright © 1995-2020 Samsung. All Rights Reserved.</copy>
+				<a href="javascript:void(0);" id="top-btn">위로</a>
+				<div class="mark"><img src="../images/pc_mark.png" alt=""  class="pc-ver"><img src="../images/mob_mark.png" alt="" class="mob-ver"></div>
+			</div>
+		</div>
+	</footer>
+	<!-- [e] Footer -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<!-- [s] layer -->
+<div class="layer-wrap">
+	<!-- [s] 로그인 팝업 -->
+	<div class="ly-content layer-login">
+		<div class="ly-cont">
+			<div class="layer login-wp infit">
+				<a href="javascript:popupClose('.layer-login');" class="ly-close">닫기</a>
+				<div class="login-lcon"><div class="cont"><img src="../images/logo.png" alt="SAMSUNG"><span><em>삼성전자</em><br>배당조회 서비스</span></div></div>
+				<div class="login-rcon">
+					<h3>로그인</h3>
+					<ul>
+						<li>
+							<label for="ssId">아이디</label>
+							<input type="text" name="" id="ssId" value="" class="input-basic"  placeholder="" required="">
+						</li>
+						<li>
+							<label for="ssPw">비밀번호</label>
+							<input type="text" name="" id="ssPw" value="" class="input-basic"  placeholder="" required="">
+						</li>
+					</ul>
+					<div class="check">
+						<input type="checkbox" id="idChk" class="chk sm"><label for="idChk" class="chk-label sm">아이디 기억하기</label>
+					</div>
+					<div class="btn-area">
+						<button type="submit" class="btn-norm"><span>로그인</span></button>
+						<div class="sbtn infit">
+							<a href="../member/join_agree.html">회원가입</a>
+							<a href="../member/idfind.html">아이디/비밀번호 찾기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- [e] 로그인 팝업 -->
+
+	<!-- [s] 사이트맵 팝업 -->
+	<div class="ly-content layer-sitemap">
+		<div class="ly-cont">
+
+			<div class="layer smap-wp infit">
+				<a href="javascript:popupClose('.layer-sitemap');" class="ly-close">닫기</a>
+				<div class="smap-lcon"><div class="cont"><img src="../images/logo.png" alt="SAMSUNG"><span>삼성전자<br><em>배당조회 서비스</em></span></div></div>
+				<div class="smap-rcon">
+					<h3>사이트맵</h3>
+					<ul class="sm-depth1 infit">
+						<li>
+							<a href="../intro/intro.html">소개</a>
+							<ul class="sm-depth2">
+								<li><a href="../intro/intro.html">삼성전자 배당조회 Web Service</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../mypage/dividend.html" class="arrow">마이페이지</a>
+							<ul class="sm-depth2">
+								<li><a href="../mypage/dividend.html">배당 조회</a></li>
+								<li><a href="../mypage/edit.html">내 정보 수정</a></li>
+								<li><a href="../mypage/out.html">회원 탈퇴</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../stock/info.html">주식정보</a>
+							<ul class="sm-depth2">
+								<li><a href="../stock/info.html">주식정보</a></li>
+							</ul>
+						</li>						
+						<li>
+							<a href="../customer/notice.html" class="arrow">문의</a>
+							<ul class="sm-depth2">
+								<li><a href="../customer/faq.html">자주하는 질문</a></li>
+								<li><a href="../customer/qna.html">Contact us</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../customer/notice.html">공지</a>
+							<ul class="sm-depth2">
+								<li><a href="../customer/notice.html">공지</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../terms/condition.html" class="arrow">약관</a>
+							<ul class="sm-depth2">
+								<li><a href="../terms/condition.html">이용약관</a></li>
+								<li><a href="../terms/personal.html">개인정보취급방침</a></li>
+								<li><a href="../terms/email.html">이메일무단수집거부</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- [e] 사이트맵 팝업 -->
+
+	<!-- [s] 이용약관 팝업 -->
+	<div class="ly-content layer-condition">
+		<div class="ly-cont">
+			<div class="layer ly_cond infit">
+				<a href="javascript:popupClose('.layer-condition');" class="ly-close">닫기</a>
+				<div class="cond_cont">
+					<strong>배당조회 Web Service 이용약관 변경안내</strong> 
+					<p>
+						배당조회 Web Service를 이용해 주시는 여러분께 감사드립니다.<br>
+						서비스의 제공 및 변경, 서비스의 중단, 회원 가입, 회원 탈퇴 및 자격 상실, 회원의 의무 등에 대해 
+						보다 자세히 안내 드리기 위하여, 
+						이용약관 내용이 2021년 4월 8일 자로 변경될 예정임을 안내 드립니다.
+					</p>
+					<strong>1.변경사항</strong>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					  <caption class="hidden">이용약관 변경사항</caption>
+					  <thead>
+						<tr>
+							<th width="50%">변경 전</th>
+							<th width="50%">변경 후</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+							<td><p><strong>제4조 (서비스의 </strong>제공 및<strong> 변경)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 다음과 같은 업무를 수행합니다.<br>
+								① <u>배당내역에 대한 정보조회 서비스 제공</u><br>
+								② 기타 [삼성전자 배당조회 Web Service]가  정하는 업무 </p>
+					2. [삼성전자 배당조회 Web Service]는 회원이 서비스 이용 중 필요하다고 인정되는 다양한 정보에 대해서 전자메일이나 서신우편  등의 방법으로 회원에게 제공할 수 있으며, 회원은 원하지 않을 경우 가입신청 메뉴와 회원정보수정 메뉴에서  정보수신거부를 할 수 있습니다. 단, 서비스의 종료, 중단 기타 서비스 내용에 중대한 변경 등의 사유가 있을 경우에는 회원의 수신거부의사에도 불구하고 해당 내용을  제공할 수 있습니다.</td>
+							<td><p><strong>제4조 (서비스의 제공 및 변경)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 다음과 같은 업무를 수행합니다.<br>
+								<u>① 삼성전자 주주에게 배당지급일로부터 1개월간 회원 가입과 등록 및 배당내역에 대한  정보조회 서비스 제공(배당지급일로부터 1개월이 경과한 이후에는  회원 가입과 등록 및 배당내역에 대한 정보조회가 불가능합니다)</u><br>
+								② 기타 [삼성전자 배당조회 Web Service]가  정하는 업무 <br>
+					  <u>2. [</u><u>삼성전자  배당조회 Web Service]를 통해 제공되는 모든 정보는 법적인 효력이 없으며, 재산 증명 등의 목적으로 사용될 수 없습니다. </u></p>
+					3. [삼성전자 배당조회 Web Service]는 회원이 서비스 이용 중 필요하다고 인정되는 다양한 정보에 대해서 전자메일이나 서신우편  등의 방법으로 회원에게 제공할 수 있으며, 회원은 원하지 않을 경우 가입신청 메뉴와 회원정보수정 메뉴에서  정보수신거부를 할 수 있습니다. 단, 서비스의 종료, 중단 기타 서비스 내용에 중대한 변경 등의 사유가 있을 경우에는 회원의 수신거부의사에도 불구하고 해당 내용을  제공할 수 있습니다.</td>
+						</tr>
+						<tr>
+							<td><p><strong>제 5조 (서비스의 중단)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 컴퓨터 등 정보통신설비의 보수 점검, 교체  및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.</p>
+					2. 사업종목의 전환, 사업의 포기, 업체간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 [삼성전자  배당조회 Web Service]는 제 8조에 정한 방법으로  회원에게 통지할 수 있습니다.</td>
+							<td><p><strong>제 5조 (서비스의 중단)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 컴퓨터 등 정보통신설비의 보수 점검, 교체  및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.<br>
+								<u>2. [</u><u>삼성전자  배당조회 Web Service]는 제4조에서 규정한 바와  같이 배당지급일로부터 1개월간 회원 가입과 등록 및 배당내역에 대한 정보조회 서비스를 제공하며, 배당지급일로부터 1개월이 경과된 이후에는 다음 배당지급일까지 회원  가입과 등록 및 배당내역에 대한 정보조회 서비스는 중단됩니다. 단, 서비스  중단 기간에 삼성전자 주주의 별도 요청이 있는 경우 삼성전자는 [삼성전자 배당조회 Web Service] 이외의 방법으로 배당내역에 대한 정보를 제공할 수 있습니다. </u></p>
+					3. 사업종목의 전환, 사업의 포기, 업체간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 [삼성전자  배당조회 Web Service]는 제 8조에 정한 방법으로  회원에게 통지할 수 있습니다.</td>
+						</tr>
+						<tr>
+							<td><p><strong>제 6조 (회원 가입)</strong></p>
+							  <p>1. 삼성전자 주주로서 [삼성 주주 계정]에 등록된 회원은  [삼성전자 배당조회 Web Service]가 정한 가입 양식에 따라 회원정보를 기입한 후  이 약관에 동의한다는 의사표시를 함으로서 회원 가입을 신청합니다.</p>
+					2. [삼성전자 배당조회 Web Service]는 제 1항과 같이 회원으로 가입할 것을 신청한  회원 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.<br>
+					① 가입 신청자가 이 약관 제 7조 제 3항에  의하여 이전에 회원자격을 상실한 적이 있는 경우. 다만 제 7조  제 3항에 의한 회원자격 상실 후 3년이 경과한 자로서 [삼성전자 배당조회 Web Service]의 회원 재가입 승낙을 얻은  경우에는 예외로 합니다.<br>
+					② 모든 가입신청자는 실명확인 및 본인인증을 거쳐야 하나, 그러하지 아니한 경우<br>
+					③ 등록 내용에 허위, 기재누락, 오기가 있는  경우.<br>
+					④ 기타 회원으로 등록하는 것이 [삼성전자 배당조회  Web Service]의 기술상 현저히 지장이 있다고 판단되는 경우.</td>
+							<td><p><strong>제 6조 (회원 가입)</strong></p>
+							  <p>1. 삼성전자 주주로서 [삼성 주주 계정]에 등록된 회원은  [삼성전자 배당조회 Web Service]가 정한 가입 양식에 따라 회원정보를 기입한 후  이 약관에 동의한다는 의사표시를 함으로서 회원 가입을 신청합니다. <u>각 배당지급일 기준 삼성전자  주주가 아닌 자는 회원 가입 신청을 할 수 없습니다. </u> <br>
+								2. [삼성전자 배당조회 Web Service]는 제 1항과 같이 회원으로 가입할 것을 신청한  회원 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.<br>
+					  <u>① 가입 신청자가 각 배당지급일 기준으로 삼성전자 주주가 아닌 경우</u><br>
+								② 가입 신청자가 이 약관 제 7조 제 3항에  의하여 이전에 회원자격을 상실한 적이 있는 경우. 다만 제 7조  제 3항에 의한 회원자격 상실 후 3년이 경과한 자로서 [삼성전자 배당조회 Web Service]의 회원 재가입 승낙을 얻은  경우에는 예외로 합니다.<br>
+								③ 모든 가입신청자는 실명확인 및 본인인증을 거쳐야 하나, 그러하지 아니한 경우<br>
+								④ 등록 내용에 허위, 기재누락, 오기가 있는  경우.<br>
+							⑤ 기타 회원으로 등록하는 것이 [삼성전자 배당조회  Web Service]의 기술상 현저히 지장이 있다고 판단되는 경우.</p></td>
+						</tr>
+						<tr>
+							<td><p><strong>제 7조 (회원 탈퇴 및 자격 상실 등)</strong></p>
+							  <p>1. 회원은 [삼성전자 배당조회 Web Service]에 언제든지 탈퇴를 요청할  수 있으며 [삼성전자 배당조회 Web Service]는 즉시  회원 탈퇴를 처리합니다. 그리고 회원 탈퇴 시점부터 3개월  동안은 동일한 아이디로 회원가입을 할 수 없습니다.<br>
+								2. 회원이 다음 각 호의 사유에  해당하는 경우 [삼성전자 배당조회 Web Service]는  회원자격을 제한 또는 <u>정지 시킬 수 있습니다.<br>
+					  </u>① 가입 신청 시에 허위 내용을 등록한 경우<br>
+								② 다른 사람의 [삼성전자 배당조회 Web  Service] 이용을 방해하거나 그 정보를 도용하는 등 정상적인 [삼성전자 배당조회 Web Service] 운영을 위협하는 경우<br>
+								③ [삼성전자 배당조회 Web Service]에서  법령과 이 약관이 금지되거나 공서양속에 반하는 행위를 하는 경우<br>
+					  <u>④ 삼성전자 주주임이 확인되지 않는 경우</u></p>
+					3. [삼성전자 배당조회 Web Service]가 회원 자격을 제한·정지 시킨 후에도 전항 각호의 사유가 발생하여 [삼성전자 배당조회 Web Service]로부터 일정한 기간을 정하여  시정요청을 받았음에도 불구하고 그 기간 내 시정되지 아니하는 경우 [삼성전자 배당조회 Web Service]는 회원의 자격을 <u>상실시킬 수 있습니다.</u></td>
+							<td><p><strong>제 7조 (회원 탈퇴 및 자격 상실 등)</strong></p>
+							  <p>1. 회원은 [삼성전자 배당조회 Web Service]에 언제든지 탈퇴를 요청할  수 있으며 [삼성전자 배당조회 Web Service]는 즉시  회원 탈퇴를 처리합니다. 그리고 회원 탈퇴 시점부터 3개월  동안은 동일한 아이디로 회원가입을 할 수 없습니다.<br>
+								2. 회원이 다음 각 호의 사유에  해당하는 경우 [삼성전자 배당조회 Web Service]는  회원자격을 제한 또는 <u>정지할 수 있습니다.<br>
+					  </u>① 가입 신청 시에 허위 내용을 등록한 경우<br>
+								② 다른 사람의 [삼성전자 배당조회 Web Service]  이용을 방해하거나 그 정보를 도용하는 등 정상적인 [삼성전자 배당조회 Web Service] 운영을 위협하는 경우<br>
+								③ [삼성전자 배당조회 Web Service]에서  법령과 이 약관이 금지되거나 공서양속에 반하는 행위를 하는 경우<br>
+					  <u>④ 각 배당기준일을 기준으로 삼성전자 주주임이 확인되지 않는 경우</u></p>
+					3. [삼성전자 배당조회 Web Service]가 회원 자격을 제한·정지시킨 후에도 전항 각호의 사유가 발생하여 [삼성전자 배당조회 Web Service]로부터 일정한 기간을 정하여  시정요청을 받았음에도 불구하고 그 기간 내 시정되지 아니하는 경우 [삼성전자 배당조회 Web Service]는 회원의 자격을 <u>상실시키고 탈퇴 처리할 수 있습니다. </u></td>
+						</tr>
+						<tr>
+							<td><p><strong>제 12 (회원의 의무)</strong></p>
+							  <p>1. 회원은 다음 행위를 하여서는 <u>안됩니다.</u></p>
+					① 신청 또는  변경 시 허위 내용의 등록<br>
+					② 타인의 정보 도용<br>
+					③ [삼성전자 배당조회 Web Service]에  게시된 정보의 변경<br>
+					④ [삼성전자 배당조회 Web Service]가  정한 정보 이외의 정보 (컴퓨터 프로그램 등)의 송신 또는  게시<br>
+					⑤ [삼성전자 배당조회 Web Service] 기타  제 3자의 저작권 등 지식재산권에 대한 침해<br>
+					⑥ [삼성전자 배당조회 Web Service] 기타  제 3자의 명예를 손상시키거나 업무를 방해하는 행위<br>
+					⑦ 외설, 욕설, 비속어 또는 폭력적인 메시지, 화상, 음성 기타 공서양속에 반하는 정보를 [삼성전자 배당조회 Web Service]에 공개 또는 게시하는 행위<br>
+					⑧ 영리를 목적으로 하는 광고의 게시</td>
+							<td><p><strong>제 12 (회원의 의무)</strong></p>
+							  <p>1. 회원은 다음 행위를 하여서는 <u>아니 되며, 의무를 위반하는 경우 법적인 책임이 발생할 수 있습니다.</u></p>
+					① 신청 또는  변경 시 허위 내용의 등록<br>
+					② 타인의 정보 도용<br>
+					③ [삼성전자 배당조회 Web Service]에  게시된 정보의 변경<br>
+					④ [삼성전자 배당조회 Web Service]가  정한 정보 이외의 정보 (컴퓨터 프로그램 등)의 송신 또는  게시<br>
+					⑤ [삼성전자 배당조회 Web Service] 기타  제 3자의 저작권 등 지식재산권에 대한 침해<br>
+					⑥ [삼성전자 배당조회 Web Service] 기타  제 3자의 명예를 손상시키거나 업무를 방해하는 행위<br>
+					⑦ 외설, 욕설, 비속어 또는 폭력적인 메시지, 화상, 음성 기타 공서양속에 반하는 정보를 [삼성전자 배당조회 Web Service]에 공개 또는 게시하는 행위<br>
+					⑧ 영리를 목적으로 하는 광고의 게시</td>
+						</tr>
+					  <tbody>
+					</table>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="dim"></div>
+</div>
+<!-- [e] layer -->
+
+<script src="../js/common.js"></script>
+
+</body>
+</html>

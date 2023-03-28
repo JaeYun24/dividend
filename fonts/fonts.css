@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'SamsungOneKorean';
+  font-style: normal;
+  font-weight: 200;
+  src:url(SamsungOneKorean-200C-v1.2-20190628.eot?#iefix);
+  src:url(SamsungOneKorean-200C-v1.2-20190628.eot?#iefix) format('embedded-opentype'),
+      url(SamsungOneKorean-200C-v1.2-20190628.woff2) format('woff2'),
+      url(SamsungOneKorean-200C-v1.2-20190628.woff) format('woff'),
+      url(SamsungOneKorean-200C-v1.2-20190628.svg) format('svg');
+}
+@font-face {
+  font-family: 'SamsungOneKorean';
+  font-style: normal;
+  font-weight: 300;
+  src:url(SamsungOneKorean-300C-v1.2-20190628.eot?#iefix);
+  src:url(SamsungOneKorean-300C-v1.2-20190628.eot?#iefix) format('embedded-opentype'),
+      url(SamsungOneKorean-300C-v1.2-20190628.woff2) format('woff2'),
+      url(SamsungOneKorean-300C-v1.2-20190628.woff) format('woff'),
+      url(SamsungOneKorean-300C-v1.2-20190628.svg) format('svg');
+}
+@font-face {
+  font-family: 'SamsungOneKorean';
+  font-style: normal;
+  font-weight: 400;
+  src:url(SamsungOneKorean-400C-v1.2-20190628.eot?#iefix);
+  src:url(SamsungOneKorean-400C-v1.2-20190628.eot?#iefix) format('embedded-opentype'),
+      url(SamsungOneKorean-400C-v1.2-20190628.woff2) format('woff2'),
+      url(SamsungOneKorean-400C-v1.2-20190628.woff) format('woff'),
+      url(SamsungOneKorean-400C-v1.2-20190628.svg) format('svg');
+}
+@font-face {
+  font-family: 'SamsungOneKorean';
+  font-style: normal;
+  font-weight: 500;
+  src:url(SamsungOneKorean-500C-v1.2-20190628.eot?#iefix);
+  src:url(SamsungOneKorean-500C-v1.2-20190628.eot?#iefix) format('embedded-opentype'),
+      url(SamsungOneKorean-500C-v1.2-20190628.woff2) format('woff2'),
+      url(SamsungOneKorean-500C-v1.2-20190628.woff) format('woff'),
+      url(SamsungOneKorean-500C-v1.2-20190628.svg) format('svg');
+}
+@font-face {
+  font-family: 'SamsungOneKorean';
+  font-style: normal;
+  font-weight: 600;
+  src:url(SamsungOneKorean-600C-v1.2-20190628.eot?#iefix);
+  src:url(SamsungOneKorean-600C-v1.2-20190628.eot?#iefix) format('embedded-opentype'),
+      url(SamsungOneKorean-600C-v1.2-20190628.woff2) format('woff2'),
+      url(SamsungOneKorean-600C-v1.2-20190628.woff) format('woff'),
+      url(SamsungOneKorean-600C-v1.2-20190628.svg) format('svg');
+}
+@font-face {
+  font-family: 'SamsungOneKorean';
+  font-style: normal;
+  font-weight: 700;
+  src:url(SamsungOneKorean-700C-v1.2-20190628.eot?#iefix);
+  src:url(SamsungOneKorean-700C-v1.2-20190628.eot?#iefix) format('embedded-opentype'),
+      url(SamsungOneKorean-700C-v1.2-20190628.woff2) format('woff2'),
+      url(SamsungOneKorean-700C-v1.2-20190628.woff) format('woff'),
+      url(SamsungOneKorean-700C-v1.2-20190628.svg) format('svg');
+}

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 주주배당조회</title>
+<link rel="stylesheet" type="text/css" href="../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/import.css">
+<script src="../js/libs/jquery.min.js"></script>
+<script src="../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="header sub">
+		<h1 class="logo"><a href="../main/index.html"><span class="mark">SAMSUNG</span><span class="tt">삼성전자 배당조회</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<div class="mgnb-logo mob-ver"><a href="../main/index.html"><img src="../images/logo.png" alt="SAMSUNG"><span>주주배당조회</span></a></div>
+				<ul class="gnb-depth1 infit">
+					<li><a href="../intro/intro.html">소개</a></li>
+					<li>
+						<a href="../mypage/dividend.html" class="arrow">마이페이지</a>
+						<ul class="gnb-depth2">
+							<li><a href="../mypage/dividend.html">배당 조회</a></li>
+							<li><a href="../mypage/edit.html">내 정보 수정</a></li>
+							<li><a href="../mypage/out.html">회원 탈퇴</a></li>
+						</ul>
+					</li>
+					<li><a href="../stock/info.html">주식정보</a></li>					
+					<li>
+						<a href="../customer/notice.html" class="arrow">문의</a>
+						<ul class="gnb-depth2">
+							<li><a href="../customer/faq.html">자주하는 질문</a></li>
+							<li><a href="../customer/qna.html">Contact us</a></li>
+						</ul>
+					</li>
+					<li><a href="../customer/notice.html">공지사항</a></li>
+				</ul>
+			</div>
+			<!-- 로그인전 -->
+			<div class="tnb"><!-- // 로그인후 class="is-login" 추가 -->
+				<ul class="infit">
+					<li><a href="../member/join_agree.html" class="join">회원가입</a></li>
+					<li class="rbtn"><a href="javascript:popupOpen('.layer-login');">로그인</a></li>
+				</ul>
+			</div>
+			<!-- // 로그인후 (일반회원/인증회원) -->
+			<!--
+			<div class="tnb is-login">
+				<ul class="infit">
+					<li>
+						<div class="info nom-mem">
+							<span>김으뜸님</span>
+							<span>일반회원</span>
+						</div>
+						<div class="info stk-mem">
+							<span>김으뜸님</span>
+							<span>인증회원</span>
+						</div>
+					</li>
+					<li class="rbtn"><a href="#">로그아웃</a></li>
+				</ul>
+			</div>
+			-->
+			<div class="mgnb-foot mob-ver">© 2020 SAMSUNG All Rights Reserved.</div>
+		</nav>
+
+		<a href="javascript:void(0);" class="mgnb-open">
+		  <label>모바일 전체메뉴</label>
+		  <span class="header-button-item top"></span>
+		  <span class="header-button-item middle"></span>
+		  <span class="header-button-item bottom"></span>
+	  	</a>
+		<div class="dim"></div>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="sub-content">
+			<section class="sub-sec cust-sec">
+				<div class="sub-title">
+					<div class="inner">
+						<h2>Contact us</h2>
+						<div class="page-root">
+							<span>홈</span>
+							<span class="bar">/</span>
+							<span>문의</span>
+							<span class="bar">/</span>
+							<span>Contact us</span>
+						</div>
+					</div>
+				</div>
+				<div class="board-cont qna">
+					<!-- [s] 게시판영역 -->
+					<div class="qna-con">
+						<h3>배당조회 서비스 및 <br class="mob-ver">회원관련 문의</h3>
+						<div class="info infit">
+							<dl>
+								<dt>이메일</dt>
+								<dd class="arl">customerservice@samsung.com</dd>
+							</dl>
+							<dl>
+								<dt>대표전호</dt>
+								<dd class="arl">02-2200-0000</dd>
+							</dl>
+						</div>
+						<div class="bot">
+							<div class="ex">기타 삼성관련 및 서비스 문의는 삼성전자 공식 홈페이지를 통해 이용하실 수 있습니다.</div>
+							<a href="https://www.samsung.com/sec/info/contactus/" target="_blank">문의하러 가기</a>
+						</div>
+					</div>
+					<!-- [e] 게시판영역 -->
+				</div>
+
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+	<!-- [s] Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>SAMSUNG</h2>
+			<div class="foot-content">
+				<ul class="foot-menu infit">
+					<li><a href="../terms/personal.html"><b>개인정보처리방침</b></a></li>
+					<li><a href="../terms/condition.html">이용약관</a></li>
+					<li><a href="../terms/email.html">이메일 무단 수집거부</a></li>
+					<li><a href="javascript:popupOpen('.layer-sitemap');">사이트맵</a></li>
+				</ul>
+				<div class="foot-info">
+					경기도 수원시 영통구 삼성로 129 (매탄동) 삼성전자주식회사<span>ㅣ</span>대표이사 김기남<span>ㅣ</span>사업자등록번호 124-81-00998<br class="mob-ver">
+					<a href="#" target="_blank">사업자정보확인</a>
+				</div>
+				<copy>Copyright © 1995-2020 SAMSUNG All Rights Reserved.</copy>
+				<a href="javascript:void(0);" id="top-btn">위로</a>
+			</div>
+		</div>
+	</footer>
+	<!-- [e] Footer -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<script src="../js/common.js"></script>
+<script src="../js/publish.js"></script>
+
+</body>
+</html>

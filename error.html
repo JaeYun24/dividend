@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 삼성전자 배당조회</title>
+<link rel="stylesheet" type="text/css" href="../fonts/fonts.css">
+<script src="https://dividend.samsung.com/static/js/libs/jquery.min.js"></script>
+<script src="https://dividend.samsung.com/static/js/libs/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/layout.css">
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/layout_1024.css">
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/layout_720.css">
+</head>
+
+<script language="Javascript" type="text/javascript">
+ function setCookie( name, value, expirehours ) {
+  var todayDate = new Date();
+  todayDate.setHours( todayDate.getHours() + expirehours );
+  document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+ }
+
+ function popcloseWin() {
+  if(document.getElementById("pop_today").checked){
+   setCookie( "ncookie", "done" , 24 );
+  }
+  document.getElementById('noti_pop').style.display = "none";
+  $(".ndim").fadeOut();
+ }
+
+ function popcloseWin2() {
+  if(document.getElementById("pop_today2").checked){
+   setCookie( "ncookie2", "done" , 24 );
+  }
+  document.getElementById('cond_pop').style.display = "none";
+ }
+
+</script>
+
+<style>
+	.nlayer-wrap{display:block;position:fixed;top:0;left:0;z-index:9999;width:100%;height:100%;overflow-y: auto;text-align:center;}
+	.nlayer-wrap .ndim{display:block;position:fixed;top:0;left:0;z-index:995;width:100%;height:100%;background:rgba(0,0,0,0.8);}
+	.nlayer-wrap .nly-content{position:absolute;display:table;z-index:999;width:100%;height:100%;text-align:center;}
+	.nly-cont{display:table-cell;vertical-align: middle;position:relative;width:100%;height:100%;padding:50px 0;text-align:center;box-sizing: border-box;}
+	.nlayer{position:relative;vertical-align: middle;width:90%;margin:0 auto;box-sizing: border-box;}
+	
+	.nlayer-wrap .btn-area{text-align:center;}
+	.nlayer-wrap .btn-area a{display:inline-block;margin-top:30px;padding:0 40px;text-align:center;line-height:44px;font-size:16px;color:#fff;background:#000;border-radius:5px;text-decoration:none;}
+    .nlayer-wrap .tit{margin-top:30px}
+	.nlayer-wrap .chk+.chk-label{font-size:16px;padding-left:30px;text-decoration:none;color:#222;}
+	.chk-label:hover span{border:0;color:#222;}
+
+    #noti_pop .noti_inner{z-index:10001;width:100%;max-width:820px;margin:0 auto;padding:50px 40px;background:#fff;border-radius:5px;box-sizing:border-box;text-align:left;}
+    #noti_pop .noti_inner h2{font-size:30px;text-align:left;font-weight:600;margin-bottom:30px}
+    #noti_pop .noti_inner p{font-size:16px;color:#000;line-height:1.6;word-break:keep-all}
+    /*#noti_pop .noti_inner span{display:block;padding:20px;margin-top:20px;text-align:center;font-size:16px;color:#000;line-height:1.6;word-break:keep-all;background:#f0f0f0;}*/
+    #noti_pop .noti_inner em{display:block;margin-top:10px;line-height:1.7;font-size:14px;text-align:left;color:#666;}
+   
+
+	.ly-cond{max-width:820px;height:auto;padding:40px;background:#fff;border-radius:5px;text-align:left;}
+	.ly-cond .top-tt strong{font-size:20px;}
+	.ly-cond .top-tt p{font-size:14px;line-height:1.5;}
+	.ly-cond .top-tt b{display:block;font-size:16px;color:#222;padding-bottom:5px;}
+	.ly-cond .bot-bt{padding-top:15px;}
+	.ly-cond .bot-bt p{margin:0;margin-top:5px;font-size:14px;line-height:1.5;}
+	.ly-cond .bot-bt b{display:block;font-size:16px;color:#222;padding-bottom:0;}
+	.ly-cond .cond-cont{font-size:16px;width:100%;height:250px;border:1px solid #E1E1E1;overflow-y:auto;text-align:left;}
+	.ly-cond .cond-cont strong{display:block;margin-top:30px;margin-bottom:20px;font-size:15px;font-weight:700}
+	.ly-cond .cond-cont strong em{display:block;font-size:14px;font-style:none;}
+	.ly-cond .cond-cont strong:first-of-type{margin-top:0}
+	.ly-cond .cond-cont p{margin-bottom:10px;line-height:1.4;}
+	.ly-cond .cond-cont table{border-collapse:collapse;text-align:left;}
+	.ly-cond .cond-cont table caption{display:none;}
+	.ly-cond .cond-cont table th{padding:15px 10px;background:#f8f8f8;border-bottom:1px solid #E1E1E1;font-size:15px;font-weight:600;text-align:center;}
+	.ly-cond .cond-cont table td{padding:10px 10px;line-height:1.4;border-bottom:1px solid #E1E1E1;font-size:14px;vertical-align: top;text-align:center;word-break:keep-all;text-align:left;}
+	.ly-cond .cond-cont table tr td:first-child{border-right:1px solid #E1E1E1;}
+	.ly-cond .cond-cont table td b{font-size:20px}
+	.ly-cond .btn-area a{margin-top:10px;}
+
+
+    @media only screen and (max-width:640px){
+        #noti_pop .noti_inner{width:auto;left:30px;right:30px;top:0;margin-left:0;margin-top:50px;padding:40px 30px;background:#fff}
+        #noti_pop .noti_inner h2{font-size:26px;}
+    }
+</style>
+
+<body>
+<!-- [s] layer -->
+<div class="nlayer-wrap">
+	<!-- [s] 기말배당 팝업 -->
+	<div class="nly-content layer-noti" id="noti_pop" >
+		<div class="nly-cont">
+			<div  class="nlayer infit">
+				<div class="layer_popup">
+					<div class="noti_inner">
+						<h2>'20년 기말배당 조회를 위한 Web Service 개시 예정일 안내 ('21/4/9~)</h2>
+							<p>'21년 4월 9일(금) 부터 '20년 기말배당 내역 조회를 위한 Web Service가 
+							개시될 예정입니다. 
+							<br>원활한 접속환경 제공 및 데이터베이스 관리 효율화를 위해 '20.3분기 배당 조회를 위한 Web Service 는 '21년 4월 8일(목)까지 제공될 예정이니
+							이용에 참고하시기 바랍니다. <br>
+						</p>
+						
+						<em>※ 단, 기말배당의 실시여부 및 배당금은 주주총회 결의를 통해 최종적으로 확정될 예정이오니 이 점 양지 바랍니다.</em>
+					<div class="btn-area">
+						<a href="javascript:popcloseWin();" class="btn">확인</a>
+					</div>
+					<div class="tit">
+						<input type="checkbox" name="pop_today" id="pop_today"  class="chk" aria-hidden="true">
+						<label for="pop_today" class="chk-label" role="checkbox" aria-checked="false"><span>오늘 하루 열지 않기</span></label>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- [s] 이용약관 팝업 -->
+	<div class="nly-content layer-condition" id="cond_pop" >
+		<div class="nly-cont">
+			<div class="nlayer ly-cond infit">
+				<div class="top-tt">
+					<strong>배당조회 Web Service 이용약관 변경안내</strong> 
+					<p>
+						배당조회 Web Service를 이용해 주시는 여러분께 감사드립니다.<br>
+						서비스의 제공 및 변경, 서비스의 중단, 회원 가입, 회원 탈퇴 및 자격 상실, 회원의 의무 등에 대해 
+						보다 자세히 안내 드리기 위하여, 
+						이용약관 내용이 2021년 4월 8일 자로 변경될 예정임을 안내 드립니다.
+					</p>
+					<b>1.변경사항</b>
+				</div>
+				<div class="cond-cont">
+					
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					  <caption class="hidden">이용약관 변경사항</caption>
+					  <thead>
+						<tr>
+							<th width="50%">변경 전</th>
+							<th width="50%">변경 후</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+							<td><p><strong>제4조 (서비스의 </strong>제공 및<strong> 변경)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 다음과 같은 업무를 수행합니다.<br>
+								① <u>배당내역에 대한 정보조회 서비스 제공</u><br>
+								② 기타 [삼성전자 배당조회 Web Service]가  정하는 업무 </p>
+					2. [삼성전자 배당조회 Web Service]는 회원이 서비스 이용 중 필요하다고 인정되는 다양한 정보에 대해서 전자메일이나 서신우편  등의 방법으로 회원에게 제공할 수 있으며, 회원은 원하지 않을 경우 가입신청 메뉴와 회원정보수정 메뉴에서  정보수신거부를 할 수 있습니다. 단, 서비스의 종료, 중단 기타 서비스 내용에 중대한 변경 등의 사유가 있을 경우에는 회원의 수신거부의사에도 불구하고 해당 내용을  제공할 수 있습니다.</td>
+							<td><p><strong>제4조 (서비스의 제공 및 변경)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 다음과 같은 업무를 수행합니다.<br>
+								<u>① 삼성전자 주주에게 배당지급일로부터 1개월간 회원 가입과 등록 및 배당내역에 대한  정보조회 서비스 제공(배당지급일로부터 1개월이 경과한 이후에는  회원 가입과 등록 및 배당내역에 대한 정보조회가 불가능합니다)</u><br>
+								② 기타 [삼성전자 배당조회 Web Service]가  정하는 업무 <br>
+					  <u>2. [</u><u>삼성전자  배당조회 Web Service]를 통해 제공되는 모든 정보는 법적인 효력이 없으며, 재산 증명 등의 목적으로 사용될 수 없습니다. </u></p>
+					3. [삼성전자 배당조회 Web Service]는 회원이 서비스 이용 중 필요하다고 인정되는 다양한 정보에 대해서 전자메일이나 서신우편  등의 방법으로 회원에게 제공할 수 있으며, 회원은 원하지 않을 경우 가입신청 메뉴와 회원정보수정 메뉴에서  정보수신거부를 할 수 있습니다. 단, 서비스의 종료, 중단 기타 서비스 내용에 중대한 변경 등의 사유가 있을 경우에는 회원의 수신거부의사에도 불구하고 해당 내용을  제공할 수 있습니다.</td>
+						</tr>
+						<tr>
+							<td><p><strong>제 5조 (서비스의 중단)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 컴퓨터 등 정보통신설비의 보수 점검, 교체  및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.</p>
+					2. 사업종목의 전환, 사업의 포기, 업체간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 [삼성전자  배당조회 Web Service]는 제 8조에 정한 방법으로  회원에게 통지할 수 있습니다.</td>
+							<td><p><strong>제 5조 (서비스의 중단)</strong></p>
+							  <p>1. [삼성전자 배당조회 Web Service]는 컴퓨터 등 정보통신설비의 보수 점검, 교체  및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.<br>
+								<u>2. [</u><u>삼성전자  배당조회 Web Service]는 제4조에서 규정한 바와  같이 배당지급일로부터 1개월간 회원 가입과 등록 및 배당내역에 대한 정보조회 서비스를 제공하며, 배당지급일로부터 1개월이 경과된 이후에는 다음 배당지급일까지 회원  가입과 등록 및 배당내역에 대한 정보조회 서비스는 중단됩니다. 단, 서비스  중단 기간에 삼성전자 주주의 별도 요청이 있는 경우 삼성전자는 [삼성전자 배당조회 Web Service] 이외의 방법으로 배당내역에 대한 정보를 제공할 수 있습니다. </u></p>
+					3. 사업종목의 전환, 사업의 포기, 업체간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 [삼성전자  배당조회 Web Service]는 제 8조에 정한 방법으로  회원에게 통지할 수 있습니다.</td>
+						</tr>
+						<tr>
+							<td><p><strong>제 6조 (회원 가입)</strong></p>
+							  <p>1. 삼성전자 주주로서 [삼성 주주 계정]에 등록된 회원은  [삼성전자 배당조회 Web Service]가 정한 가입 양식에 따라 회원정보를 기입한 후  이 약관에 동의한다는 의사표시를 함으로서 회원 가입을 신청합니다.</p>
+					2. [삼성전자 배당조회 Web Service]는 제 1항과 같이 회원으로 가입할 것을 신청한  회원 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.<br>
+					① 가입 신청자가 이 약관 제 7조 제 3항에  의하여 이전에 회원자격을 상실한 적이 있는 경우. 다만 제 7조  제 3항에 의한 회원자격 상실 후 3년이 경과한 자로서 [삼성전자 배당조회 Web Service]의 회원 재가입 승낙을 얻은  경우에는 예외로 합니다.<br>
+					② 모든 가입신청자는 실명확인 및 본인인증을 거쳐야 하나, 그러하지 아니한 경우<br>
+					③ 등록 내용에 허위, 기재누락, 오기가 있는  경우.<br>
+					④ 기타 회원으로 등록하는 것이 [삼성전자 배당조회  Web Service]의 기술상 현저히 지장이 있다고 판단되는 경우.</td>
+							<td><p><strong>제 6조 (회원 가입)</strong></p>
+							  <p>1. 삼성전자 주주로서 [삼성 주주 계정]에 등록된 회원은  [삼성전자 배당조회 Web Service]가 정한 가입 양식에 따라 회원정보를 기입한 후  이 약관에 동의한다는 의사표시를 함으로서 회원 가입을 신청합니다. <u>각 배당지급일 기준 삼성전자  주주가 아닌 자는 회원 가입 신청을 할 수 없습니다. </u> <br>
+								2. [삼성전자 배당조회 Web Service]는 제 1항과 같이 회원으로 가입할 것을 신청한  회원 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.<br>
+					  <u>① 가입 신청자가 각 배당지급일 기준으로 삼성전자 주주가 아닌 경우</u><br>
+								② 가입 신청자가 이 약관 제 7조 제 3항에  의하여 이전에 회원자격을 상실한 적이 있는 경우. 다만 제 7조  제 3항에 의한 회원자격 상실 후 3년이 경과한 자로서 [삼성전자 배당조회 Web Service]의 회원 재가입 승낙을 얻은  경우에는 예외로 합니다.<br>
+								③ 모든 가입신청자는 실명확인 및 본인인증을 거쳐야 하나, 그러하지 아니한 경우<br>
+								④ 등록 내용에 허위, 기재누락, 오기가 있는  경우.<br>
+							⑤ 기타 회원으로 등록하는 것이 [삼성전자 배당조회  Web Service]의 기술상 현저히 지장이 있다고 판단되는 경우.</p></td>
+						</tr>
+						<tr>
+							<td><p><strong>제 7조 (회원 탈퇴 및 자격 상실 등)</strong></p>
+							  <p>1. 회원은 [삼성전자 배당조회 Web Service]에 언제든지 탈퇴를 요청할  수 있으며 [삼성전자 배당조회 Web Service]는 즉시  회원 탈퇴를 처리합니다. 그리고 회원 탈퇴 시점부터 3개월  동안은 동일한 아이디로 회원가입을 할 수 없습니다.<br>
+								2. 회원이 다음 각 호의 사유에  해당하는 경우 [삼성전자 배당조회 Web Service]는  회원자격을 제한 또는 <u>정지 시킬 수 있습니다.<br>
+					  </u>① 가입 신청 시에 허위 내용을 등록한 경우<br>
+								② 다른 사람의 [삼성전자 배당조회 Web  Service] 이용을 방해하거나 그 정보를 도용하는 등 정상적인 [삼성전자 배당조회 Web Service] 운영을 위협하는 경우<br>
+								③ [삼성전자 배당조회 Web Service]에서  법령과 이 약관이 금지되거나 공서양속에 반하는 행위를 하는 경우<br>
+					  <u>④ 삼성전자 주주임이 확인되지 않는 경우</u></p>
+					3. [삼성전자 배당조회 Web Service]가 회원 자격을 제한·정지 시킨 후에도 전항 각호의 사유가 발생하여 [삼성전자 배당조회 Web Service]로부터 일정한 기간을 정하여  시정요청을 받았음에도 불구하고 그 기간 내 시정되지 아니하는 경우 [삼성전자 배당조회 Web Service]는 회원의 자격을 <u>상실시킬 수 있습니다.</u></td>
+							<td><p><strong>제 7조 (회원 탈퇴 및 자격 상실 등)</strong></p>
+							  <p>1. 회원은 [삼성전자 배당조회 Web Service]에 언제든지 탈퇴를 요청할  수 있으며 [삼성전자 배당조회 Web Service]는 즉시  회원 탈퇴를 처리합니다. 그리고 회원 탈퇴 시점부터 3개월  동안은 동일한 아이디로 회원가입을 할 수 없습니다.<br>
+								2. 회원이 다음 각 호의 사유에  해당하는 경우 [삼성전자 배당조회 Web Service]는  회원자격을 제한 또는 <u>정지할 수 있습니다.<br>
+					  </u>① 가입 신청 시에 허위 내용을 등록한 경우<br>
+								② 다른 사람의 [삼성전자 배당조회 Web Service]  이용을 방해하거나 그 정보를 도용하는 등 정상적인 [삼성전자 배당조회 Web Service] 운영을 위협하는 경우<br>
+								③ [삼성전자 배당조회 Web Service]에서  법령과 이 약관이 금지되거나 공서양속에 반하는 행위를 하는 경우<br>
+					  <u>④ 각 배당기준일을 기준으로 삼성전자 주주임이 확인되지 않는 경우</u></p>
+					3. [삼성전자 배당조회 Web Service]가 회원 자격을 제한·정지시킨 후에도 전항 각호의 사유가 발생하여 [삼성전자 배당조회 Web Service]로부터 일정한 기간을 정하여  시정요청을 받았음에도 불구하고 그 기간 내 시정되지 아니하는 경우 [삼성전자 배당조회 Web Service]는 회원의 자격을 <u>상실시키고 탈퇴 처리할 수 있습니다. </u></td>
+						</tr>
+						<tr>
+							<td><p><strong>제 12 (회원의 의무)</strong></p>
+							  <p>1. 회원은 다음 행위를 하여서는 <u>안됩니다.</u></p>
+					① 신청 또는  변경 시 허위 내용의 등록<br>
+					② 타인의 정보 도용<br>
+					③ [삼성전자 배당조회 Web Service]에  게시된 정보의 변경<br>
+					④ [삼성전자 배당조회 Web Service]가  정한 정보 이외의 정보 (컴퓨터 프로그램 등)의 송신 또는  게시<br>
+					⑤ [삼성전자 배당조회 Web Service] 기타  제 3자의 저작권 등 지식재산권에 대한 침해<br>
+					⑥ [삼성전자 배당조회 Web Service] 기타  제 3자의 명예를 손상시키거나 업무를 방해하는 행위<br>
+					⑦ 외설, 욕설, 비속어 또는 폭력적인 메시지, 화상, 음성 기타 공서양속에 반하는 정보를 [삼성전자 배당조회 Web Service]에 공개 또는 게시하는 행위<br>
+					⑧ 영리를 목적으로 하는 광고의 게시</td>
+							<td><p><strong>제 12 (회원의 의무)</strong></p>
+							  <p>1. 회원은 다음 행위를 하여서는 <u>아니 되며, 의무를 위반하는 경우 법적인 책임이 발생할 수 있습니다.</u></p>
+					① 신청 또는  변경 시 허위 내용의 등록<br>
+					② 타인의 정보 도용<br>
+					③ [삼성전자 배당조회 Web Service]에  게시된 정보의 변경<br>
+					④ [삼성전자 배당조회 Web Service]가  정한 정보 이외의 정보 (컴퓨터 프로그램 등)의 송신 또는  게시<br>
+					⑤ [삼성전자 배당조회 Web Service] 기타  제 3자의 저작권 등 지식재산권에 대한 침해<br>
+					⑥ [삼성전자 배당조회 Web Service] 기타  제 3자의 명예를 손상시키거나 업무를 방해하는 행위<br>
+					⑦ 외설, 욕설, 비속어 또는 폭력적인 메시지, 화상, 음성 기타 공서양속에 반하는 정보를 [삼성전자 배당조회 Web Service]에 공개 또는 게시하는 행위<br>
+					⑧ 영리를 목적으로 하는 광고의 게시</td>
+						</tr>
+					  <tbody>
+					</table>
+				</div>
+
+				<div class="bot-bt">
+					<b>2. 변경 시기</b>
+					<p>변경된 약관은 2021년 4월 8일부터 효력이 발생합니다.<br>
+					본 약관에 동의하지 않는 경우 거부의사를 표시할 수 있습니다. 변경된 약관의 효력 발생일 전일까지 별도의 이의제기를 하지 않는 경우에는 본 변경에 동의한 것으로 판단되어 변경된 이용약관이 적용됩니다.<br>
+					변경된 이용약관에 대해 문의사항이 있으신 경우, 고객센터로 문의 주시면 안내드리겠습니다.<br>
+					더욱 편리하고 안정적인 서비스로 성원에 보답하겠습니다.<br>
+					감사합니다.</p>
+
+				</div>
+
+				<div class="btn-area">
+					<a href="javascript:popcloseWin2();" class="btn">확인</a>
+				</div>
+				<div class="tit">
+					<input type="checkbox" name="pop_today2" id="pop_today2"  class="chk" aria-hidden="true">
+					<label for="pop_today2" class="chk-label" role="checkbox" aria-checked="false"><span>오늘 하루 열지 않기</span></label>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="ndim"></div>
+</div>
+<!-- [e] layer -->
+<script language="Javascript" type="text/javascript">
+ cookiedata = document.cookie;
+ if (cookiedata.indexOf("ncookie=done") < 0){
+  document.getElementById('noti_pop').style.display = "table";
+ } else {
+  document.getElementById('noti_pop').style.display = "none";
+ }
+
+ if (cookiedata.indexOf("ncookie2=done") < 0){
+  document.getElementById('cond_pop').style.display = "table";
+ } else {
+  document.getElementById('cond_pop').style.display = "none";
+ }
+
+
+
+</script>
+</body>
+</html>
+
+

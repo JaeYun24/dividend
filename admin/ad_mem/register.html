@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 배당조회서비스</title>
+<link rel="stylesheet" type="text/css" href="../../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<script src="../../js/libs/jquery.min.js"></script>
+<script src="../../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="scr-cust">
+		<h1 class="logo"><a href="index.html"><span class="mark">SAMSUNG</span><span class="tt">배당조회서비스</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<ul class="gnb-depth1 infit">
+					<li>
+						<a href="javascript:void(0);" class="arrow">주식 관련 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_stock/data.html">주주 데이터</a></li>
+							<li><a href="../ad_stock/update.html">주주정보 업데이트</a></li>
+							<li><a href="../ad_stock/update_list.html">업데이트 내역</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">회원 관련</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_mem/info.html">회원 정보</a></li>
+							<li><a href="../ad_mem/inflow.html">회원 유입 현황</a></li>
+							<li><a href="../ad_mem/mail.html">메일 발송</a></li>
+							<li><a href="../ad_mem/sms.html">문자 발송</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">게시판 관리</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_board/notice.html">공지사항</a></li>
+							<li><a href="../ad_board/faq.html">자주하는 질문</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">약관</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_terms/condition.html">이용약관</a></li>
+							<li><a href="../ad_terms/personal.html">개인정보취급방침</a></li>
+							<li><a href="../ad_terms/email.html">이메일무단수집거부</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">로그 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_log/log_list.html">관리자 로그 기록</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="gnb-footer">
+				<div class="tnb">
+					<ul>
+						<li><a href="../../main/index.html">배당조회서비스 홈페이지</a></li>
+						<li><a href="#">관리자 로그아웃</a></li>
+					</ul>
+				</div>
+				<div class="copy arl">© SAMSUNG</div>
+			</div>
+		</nav>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="contents">
+			<div class="cont-tit">
+				<h2>회원정보</h2>
+				<div class="page-root">
+					<span>홈</span>
+					<span class="bar">/</span>
+					<span>회원 관련</span>
+					<span class="bar">/</span>
+					<span>회원 정보</span>
+					<span class="bar">/</span>
+					<span>회원 등록</span>
+				</div>
+			</div>
+			<section class="cont-sec">
+				<div class="sec-top">
+					<div class="btn-area infit">
+						<button type="button" onclick="location.href='info.html'" class="btn-norm" >목록</button>
+						<button type="button" class="btn-norm blk" >등록</button>
+					</div>
+				</div>
+				<div class="sec-con">
+					<!-- [s] 등록 영역 -->
+					<div class="write-con">
+						<!-- 로그인정보 -->
+						<div class="stit">로그인 정보</div>
+						<div class="cont">
+							<ul class="wform pb0">
+								<li>
+									<p class="tt">아이디<span class="req">*</span></p>
+									<div class="inp">
+										<input type="text" name="mId" id="mId" class="input-basic" placeholder="아이디를 입력하세요." required="required">
+										<label for="mId" class="hidden">아이디를 입력하세요.</label>
+									</div>
+								</li>
+								<li>
+									<p class="tt">비밀번호<span class="req">*</span></p>
+									<div class="inp">
+										<input type="password" name="mPw" id="mPw_1" class="input-basic" placeholder="비밀번호를 입력하세요." required="required">
+										<label for="mPw_1" class="hidden">비밀번호를 입력하세요.</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 회원구분 -->
+						<div class="cont mt20">
+							<dl class="wclass">
+								<dt>회원 구분 및 주주 인증 여부</dt>
+								<dd>
+									<input type="radio" name="memCls" id="memCls_1" class="schk">
+									<label for="memCls_1" class="schk-label ">내외국인</label>
+								</dd>
+								<dd>
+									<input type="radio" name="memCls" id="memCls_2" class="schk">
+									<label for="memCls_2" class="schk-label ">법인 <!--<b class="point">(인증회원)</b>--></label>
+								</dd>
+							</dl>
+						</div>
+
+						<!-- 내외국인 회원정보 -->
+						<div class="mem-cls pers mt20">
+							<div class="stit">내외국인 회원 정보</div>
+							<div class="cont">
+								<ul class="wform">
+									<li>
+										<p class="tt">이름<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mName" id="mName" class="input-basic" placeholder="이름을 입력하세요." required="required">
+											<label for="mName" class="hidden">이름입력</label>
+										</div>
+									</li>
+									<li>
+										<p class="tt">성별<span class="req">*</span></p>
+										<div class="tab-sel">
+											<a href="javascript:void(0);" class="selected">남</a>
+											<a href="javascript:void(0);">여</a>
+										</div>
+									</li>
+									<li>
+										<p class="tt">생년월일<span class="req">*</span></p>
+										<div class="birth">
+											<select name="birthDate" id="yearSel" class="select-basic w100">
+												<option value="2020">2020</option>
+												<option value="2019">2019</option>
+												<option value="2018">2018</option>
+											</select>
+											<label for="yearSel" class="hidden">년도 선택</label>
+											<select name="birthDate" id="monthSel" class="select-basic w100">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+											<label for="monthSel" class="hidden">월 선택</label>
+											<select name="birthDate" id="daySel" class="select-basic w100">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+											<label for="daySel" class="hidden">일 선택</label>
+										</div>
+									</li>
+								</ul>
+								<ul class="wform">
+									<li>
+										<p class="tt">이메일<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mMail" id="mMail" class="input-basic" placeholder="이메일 주소를 입력하세요." required="required">
+											<label for="mMail" class="hidden">이메일입력</label>
+										</div>
+									</li>
+									<li>
+										<p class="tt">휴대폰<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mTel" id="mTel" class="input-basic" placeholder="-없이 숫자만 입력하세요." required="required" >
+											<label for="mTel" class="hidden">휴대폰입력</label>
+										</div>
+									</li>
+								</ul>
+								<ul class="wform">
+									<li class="addr">
+										<p class="tt">주소<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mAddr" id="mPnum" class="input-basic num" placeholder="우편번호" required="required">
+											<label for="mPnum" class="hidden">우편번호입력</label>
+											<input type="text" name="mAddr" id="mAddr_1" class="input-basic adr" placeholder="주소" required="required">
+											<label for="mAddr_1" class="hidden">주소입력</label>
+											<input type="text" name="mAddr" id="mAddr_2" class="input-basic full" placeholder="상세주소" required="required">
+											<label for="mAddr_2" class="hidden">상세주소입력</label>
+											<a href="#" class="addr-btn btn-norm blk">주소 검색</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- 법인 회원정보 -->
+						<div class="mem-cls bsn mt20">
+							<div class="stit">법인 회원 정보</div>
+							<div class="cont">
+								<ul class="wform">
+									<li>
+										<p class="tt">법인명<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mCompany" id="mCompany" class="input-basic" placeholder="법인명을 입력하세요." required="required" >
+											<label for="mCompany" class="hidden">법인명입력</label>
+										</div>
+									</li>
+									<li>
+										<p class="tt">법인등록번호<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="Snum" id="mSnum" class="input-basic" placeholder="-없이 숫자만 입력하세요." required="required" >
+											<label for="Snum" class="hidden">법인등록번호입력</label>
+										</dd>
+										</div>
+									</li>
+								</ul>
+								<ul class="wform">
+									<li>
+										<p class="tt">이메일<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mMail" id="mMail" class="input-basic" placeholder="이메일 주소를 입력하세요." required="required">
+											<label for="mMail" class="hidden">이메일입력</label>
+										</div>
+									</li>
+									<li>
+										<p class="tt">담당자<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mPmname" id="mPname" class="input-basic" placeholder="담당자명을 입력하세요." required="required" >
+											<label for="mPmname" class="hidden">담당자명입력</label>
+										</div>
+									</li>
+									<li>
+										<p class="tt">담당자 연락처<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mPmTel" id="mPmTel" class="input-basic" placeholder="담당자연락처를 입력하세요." required="required" >
+											<label for="mTmPmTelel" class="hidden">담당자연락처입력</label>
+										</div>
+									</li>
+								</ul>
+								<ul class="wform">
+									<li class="addr">
+										<p class="tt">주소<span class="req">*</span></p>
+										<div class="inp">
+											<input type="text" name="mAddr" id="mPnum" class="input-basic num" placeholder="우편번호" required="required">
+											<label for="mPnum" class="hidden">우편번호입력</label>
+											<input type="text" name="mAddr" id="mAddr_1" class="input-basic adr" placeholder="주소" required="required">
+											<label for="mAddr_1" class="hidden">주소입력</label>
+											<input type="text" name="mAddr" id="mAddr_2" class="input-basic full" placeholder="상세주소" required="required">
+											<label for="mAddr_2" class="hidden">상세주소입력</label>
+											<a href="#" class="addr-btn btn-norm blk">주소 검색</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<!-- [e] 등록 영역 -->
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<script src="../js/admin.js"></script>
+<script>
+$(document).ready(function () {
+	//전체체크
+	$("input[name=dataChk_all]").click(function(){
+		if ($(this).is(':checked')) {
+			$("input[name=dataChk]").prop("checked", true);
+		} else {
+			$("input[name=dataChk]").prop("checked", false);
+		}
+	});
+
+	//회원구분체크
+	$("input[name=memCls]").click(function(){
+		if ($("#memCls_1").is(':checked')) {
+			$('.mem-cls.bsn').hide();
+			$('.mem-cls.pers').show();
+		} else {
+			$('.mem-cls.bsn').show();
+			$('.mem-cls.pers').hide();
+		}
+	});
+});
+</script>
+</body>
+</html>

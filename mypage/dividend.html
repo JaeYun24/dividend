@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 주주배당조회</title>
+<link rel="stylesheet" type="text/css" href="../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/import.css">
+<script src="../js/libs/jquery.min.js"></script>
+<script src="../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="header sub">
+		<h1 class="logo"><a href="../main/index.html"><span class="mark">SAMSUNG</span><span class="tt">삼성전자 배당조회</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<div class="mgnb-logo mob-ver"><a href="../main/index.html"><img src="../images/logo.png" alt="SAMSUNG"><span>삼성전자 배당조회</span></a></div>
+				<ul class="gnb-depth1 infit">
+					<li><a href="../intro/intro.html">소개</a></li>
+					<li>
+						<a href="../mypage/dividend.html" class="arrow">마이페이지</a>
+						<ul class="gnb-depth2">
+							<li><a href="../mypage/dividend.html">배당 조회</a></li>
+							<li><a href="../mypage/edit.html">내 정보 수정</a></li>
+							<li><a href="../mypage/out.html">회원 탈퇴</a></li>
+						</ul>
+					</li>
+					<li><a href="../stock/info.html">주식정보</a></li>					
+					<li>
+						<a href="../customer/notice.html" class="arrow">문의</a>
+						<ul class="gnb-depth2">
+							<li><a href="../customer/faq.html">자주하는 질문</a></li>
+							<li><a href="../customer/qna.html">Contact us</a></li>
+						</ul>
+					</li>
+					<li><a href="../customer/notice.html">공지</a></li>
+				</ul>
+			</div>
+			<!-- 로그인전 -->
+			<div class="tnb"><!-- // 로그인후 class="is-login" 추가 -->
+				<ul class="infit">
+					<li><a href="../member/join_agree.html" class="join">회원가입</a></li>
+					<li class="rbtn"><a href="javascript:popupOpen('.layer-login');">로그인</a></li>
+				</ul>
+			</div>
+			<!-- // 로그인후 (일반회원/인증회원) -->
+			<!--
+			<div class="tnb is-login">
+				<ul class="infit">
+					<li>
+						<div class="info nom-mem">
+							<span>김으뜸님</span>
+							<span>일반회원</span>
+						</div>
+						<div class="info stk-mem">
+							<span>김으뜸님</span>
+							<span>인증회원</span>
+						</div>
+					</li>
+					<li class="rbtn"><a href="#">로그아웃</a></li>
+				</ul>
+			</div>
+			-->
+			<div class="mgnb-foot mob-ver">© 2020 SAMSUNG All Rights Reserved.</div>
+		</nav>
+
+		<a href="javascript:void(0);" class="mgnb-open">
+		  <label>모바일 전체메뉴</label>
+		  <span class="header-button-item top"></span>
+		  <span class="header-button-item middle"></span>
+		  <span class="header-button-item bottom"></span>
+	  	</a>
+		<div class="dim"></div>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="sub-content">
+			<section class="sub-sec dvd-sec">
+				<div class="sub-title">
+					<div class="inner">
+						<h2>배당 조회</h2>
+						<div class="page-root">
+							<span>홈</span>
+							<span class="bar">/</span>
+							<span>마이페이지</span>
+							<span class="bar">/</span>
+							<span>배당 조회</span>
+						</div>
+					</div>
+				</div>
+				<div class="sec-cont">
+					<div class="dvd-content">
+						<div class="dvd-top">
+							<div class="inner">
+								<h3><span class="name">김으뜸</span>님의 <br>배당금 내역</h3>
+								<div class="select-top">
+									<!-- 년도선택 -->
+									<div class="year-sel infit">
+										<a href="javascript:void(0);" class="prev">이전년도</a>
+										<div class="year">
+											<a href="javascript:void(0);" class="sel-btn"><span class="arl">2020</span>년</a>
+											<div class="select-box">
+												<a href="#">2020</a>
+												<a href="#">2019</a>
+												<a href="#">2018</a>
+												<a href="#">2017</a>
+												<a href="#">2016</a>
+												<a href="#">2015</a>
+											</div>
+										</div>
+										<a href="javascript:void(0);" class="next">다음년도</a>
+									</div>
+
+									<!-- 탭선택 -->
+									<div class="dvd-tab infit">
+										<a href="#" class="detail">전체보기</a>
+										<a href="#" class="graph">그래프</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dvd-cont">
+							<div class="cont detail">
+								<!-- [s] 분기 Table -->
+								<div class="dt-table">
+									<h4>4분기</h4>
+									<div class="r-table">
+										<span class="won">(단위:원)</span>
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<caption class="hidden">배당금내역 4분기</caption>
+											<thead>
+											<tr>
+											  <th width="25%">&nbsp;</th>
+											  <th width="25%">보유수량</th>
+											  <th width="25%">주당배당</th>
+											  <th width="25%">배당금</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr class="tb-main">
+											  <td class="tt"><a href="javascript:void(0);" class="ac-btn">보통주</a></td>
+											  <td>40</td>
+											  <td>20,000</td>
+											  <td>800,000</td>
+											</tr>
+											<tr class="tb-sub">
+											  <td class="tt">삼성증권</td>
+											  <td>10</td>
+											  <td>5,000</td>
+											  <td>200,000</td>
+											</tr>
+											<tr class="tb-sub">
+											  <td class="tt">NH투자증권</td>
+											  <td>10</td>
+											  <td>5,000</td>
+											  <td>200,000</td>
+											</tr>
+											<tr class="tb-sub">
+											  <td class="tt">신한금융투자</td>
+											  <td>10</td>
+											  <td>5,000</td>
+											  <td>200,000</td>
+											</tr>
+											<tr class="tb-sub">
+											  <td class="tt">유진투자증권</td>
+											  <td>10</td>
+											  <td>5,000</td>
+											  <td>200,000</td>
+											</tr>
+											<tr class="tb-main">
+											  <td class="tt"><a href="javascript:void(0);" class="ac-btn">우선주</a></td>
+											  <td>10</td>
+											  <td>40,000</td>
+											  <td>400,000</td>
+											</tr>
+											<tr class="tb-sub">
+											  <td class="tt">NH투자증권</td>
+											  <td>10</td>
+											  <td>5,000</td>
+											  <td>200,000</td>
+											</tr>
+											<tr class="tb-main total">
+											  <td class="tt">합계</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>1,200,000</td>
+											</tr>
+											<tr class="tb-sub">
+											  <td class="tt">보통주</td>
+											  <td>40</td>
+											  <td>20,000</td>
+											  <td>800,000</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="dt-table">
+									<h4>3분기</h4>
+									<div class="r-table">
+										<span class="won">(단위:원)</span>
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<caption class="hidden">배당금내역 3분기</caption>
+											<thead>
+											<tr>
+											  <th width="25%">&nbsp;</th>
+											  <th width="25%">보유수량</th>
+											  <th width="25%">주당배당</th>
+											  <th width="25%">배당금</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+											  <td class="tt">보통주</td>
+											  <td>40</td>
+											  <td>20,000</td>
+											  <td>800,000</td>
+											</tr>
+											<tr>
+											  <td class="tt">우선주</td>
+											  <td>10</td>
+											  <td>40,000</td>
+											  <td>400,000</td>
+											</tr>
+											<tr class="total">
+											  <td class="tt">합계</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>1,200,000</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="dt-table">
+									<h4>2분기</h4>
+									<div class="r-table">
+										<span class="won">(단위:원)</span>
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<caption class="hidden">배당금내역 2분기</caption>
+											<thead>
+											<tr>
+											  <th width="25%">&nbsp;</th>
+											  <th width="25%">보유수량</th>
+											  <th width="25%">주당배당</th>
+											  <th width="25%">배당금</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+											  <td class="tt">보통주</td>
+											  <td>40</td>
+											  <td>20,000</td>
+											  <td>800,000</td>
+											</tr>
+											<tr>
+											  <td class="tt">우선주</td>
+											  <td>10</td>
+											  <td>40,000</td>
+											  <td>400,000</td>
+											</tr>
+											<tr class="total">
+											  <td class="tt">합계</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>1,200,000</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="dt-table">
+									<h4>1분기</h4>
+									<div class="r-table">
+										<span class="won">(단위:원)</span>
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<caption class="hidden">배당금내역 1분기</caption>
+											<thead>
+											<tr>
+											  <th width="25%">&nbsp;</th>
+											  <th width="25%">보유수량</th>
+											  <th width="25%">주당배당</th>
+											  <th width="25%">배당금</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+											  <td class="tt">보통주</td>
+											  <td>40</td>
+											  <td>20,000</td>
+											  <td>800,000</td>
+											</tr>
+											<tr>
+											  <td class="tt">우선주</td>
+											  <td>10</td>
+											  <td>40,000</td>
+											  <td>400,000</td>
+											</tr>
+											<tr class="total">
+											  <td class="tt">합계</td>
+											  <td>&nbsp;</td>
+											  <td>&nbsp;</td>
+											  <td>1,200,000</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- [e] 분기 Table -->
+							</div>
+							<!-- [s] 그래프 -->
+							<div class="cont graph"><canvas id="canvas"></canvas></div>
+							<!-- [e] 그래프 -->
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+	<!-- [s] Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>SAMSUNG</h2>
+			<div class="foot-content">
+				<ul class="foot-menu infit">
+					<li><a href="../terms/personal.html"><b>개인정보처리방침</b></a></li>
+					<li><a href="../terms/condition.html">이용약관</a></li>
+					<li><a href="../terms/email.html">이메일 무단 수집거부</a></li>
+					<li><a href="javascript:popupOpen('.layer-sitemap');">사이트맵</a></li>
+				</ul>
+				<div class="foot-info">
+					경기도 수원시 영통구 삼성로 129 (매탄동) 삼성전자주식회사<span>ㅣ</span>대표이사 김기남<span>ㅣ</span>사업자등록번호 124-81-00998<br class="mob-ver">
+					<a href="#" target="_blank">사업자정보확인</a>
+				</div>
+				<copy>Copyright © 1995-2020 SAMSUNG All Rights Reserved.</copy>
+				<a href="javascript:void(0);" id="top-btn">위로</a>
+			</div>
+		</div>
+	</footer>
+	<!-- [e] Footer -->
+
+	<!--  3 DOT LOADER  -->
+	<div class="loading-wp">
+		<div class="load-cont">
+			<div class="dot-loader"></div>
+			<div class="dot-loader dot-loader--2"></div>
+			<div class="dot-loader dot-loader--3"></div>
+		</div>
+	</div>
+
+</div>
+<!-- [e] Wrapper -->
+
+<script src="../js/common.js"></script>
+<script src="../js/publish.js"></script>
+<script src="../js/Chart.min.js"></script>
+
+<script>
+$(window).load(function () {
+	//로딩
+    $('.loading-wp').fadeOut(500);
+});
+
+$(document).ready(function () {
+	checkOffset();
+
+	//선택탭
+	$(".select-box>a").click(function(){
+		var rYear = $(this).text();
+		$(".sel-btn span").html(rYear)
+	});
+
+	$(".ac-btn").click(function(){
+		$(this).parents('tr').toggleClass('on').nextUntil('.tb-main').toggleClass('open');
+		//$("tr.tb-sub").addClass('open');
+	});
+
+	//분기별 차트
+	var barChartData = {
+	  labels: [
+	    "1분기",
+	    "2분기",
+	    "3분기",
+	    "4분기"
+	  ],
+	  datasets: [
+	    {
+	      label: "보통주",
+	      backgroundColor: "#98DFE5",
+	      borderWidth: 0,
+	      data: [1000, 500, 800, 1500]
+	    },
+	    {
+	      label: "우선주",
+	      backgroundColor: "#3D95DF",
+	      borderWidth: 0,
+	      data: [1500, 700, 500, 2000]
+	    }
+	  ]
+	};
+
+	var chartOptions = {
+	  responsive: true,
+	  maintainAspectRatio: false,
+	  tooltips: {
+	        enabled: true
+	  },
+	  legend: {
+		display: true,
+	    position: "top",
+		align: "end",
+		labels: {
+			usePointStyle: true,
+            boxWidth:10,
+			fontFamily:'SamsungOneKorean',
+			fontSize:18,
+			fontStyle:500,
+			fontColor: 'black'
+        }
+
+	  },
+	  title: {
+	    display: false
+	  },
+	  scales: {
+	    yAxes: [{
+		  gridLines: {
+			drawBorder: false
+		  },
+	      ticks: {
+			mirror: true,
+	        beginAtZero: true,
+			stepSize : 500,
+			fontSize : 18,
+			padding : 10,
+			z:2,
+			labelOffset : -15,
+			fontColor: 'black'
+			//suggestedMax: 2500
+	      }
+		}],
+		xAxes: [{
+			gridLines: {
+                display:false
+            },
+			ticks: {
+				fontFamily:'SamsungOneKorean',
+	  			fontSize : 18,
+				fontStyle : 600,
+				padding : 10,
+				fontColor: 'black'
+				//labelOffset: 20
+			},
+			offsetGridLines: true
+        }]
+	  }
+	}
+
+	window.onload = function() {
+	  Chart.defaults.global.datasets.bar.categoryPercentage = 0.4;
+	  Chart.defaults.global.datasets.bar.barPercentage = 0.8;
+	  var ctx = document.getElementById("canvas").getContext("2d");
+	  window.myBar = new Chart(ctx, {
+	    type: "bar",
+	    data: barChartData,
+	    options: chartOptions,
+		plugins: [{
+          beforeInit:  function(chart, options) {
+			  	Chart.Legend.prototype.afterFit = function() {
+					if(window.innerWidth > 1025){
+						this.height = this.height + 80;
+					    chart.height += 80;
+				  	}else{
+						this.height = this.height + 60;
+					    chart.height += 60;
+				  	}
+				};
+			}
+        }]
+	  });
+	};
+
+
+
+
+});
+</script>
+</body>
+</html>

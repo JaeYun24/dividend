@@ -1,0 +1,949 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="_csrf_parameter" content="_csrf" /><meta name="_csrf_header" content="X-CSRF-TOKEN" /><meta name="_csrf" content="4c82b926-0f3d-4c90-b07c-ea3b214b1d60" />
+<title>주주 추가인증 | 삼성전자 배당조회 Web Service</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://dividend.samsung.com/static/favicon.ico">
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/import.css">
+<link rel="stylesheet" type="text/css" href="https://dividend.samsung.com/static/css/slick.css">
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/TweenMax.min.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/additional-methods.min.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/moment.js"></script>
+
+</head>
+
+<body>
+	<div id="wrapper" class=''>
+		<div id="skipToContent" class="skipnav">
+			<a href="#container">본문 바로가기</a>
+		</div>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header id="header" class="header sub">
+	<h1 class="logo"><a href="/"><span class="mark">SAMSUNG</span><span class="tt">삼성전자 배당조회 Web Service</span></a></h1>
+	<a href="javascript:void(0);" role="button" class="mgnb-open">
+	  <label>모바일 전체메뉴</label>
+	  <span class="header-button-item top"></span>
+	  <span class="header-button-item middle"></span>
+	  <span class="header-button-item bottom"></span>
+  	</a>
+	<nav class="gnb">
+		<div class="gnb-wrap">
+			<div class="mgnb-logo mob-ver"><a href="/"><img src="https://dividend.samsung.com/static/images/logo.png" alt="SAMSUNG"><span>삼성전자 배당조회 Web Service</span></a></div>
+			<ul class="gnb-depth1 infit">
+				<li><a href="/intro">소개</a></li>
+				<li>
+					<a href="javascript:void(0);" onClick="return false;" class="arrow">마이페이지</a>
+					<ul class="gnb-depth2">
+						<li><a href="/mypage/dividend?year=2020" onClick="checkSession('/mypage/dividend?year=2020');return false;">배당조회</a></li>
+						<li><a href="/mypage/edit" onClick="checkSession('/mypage/edit');return false;">내 정보 수정</a></li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="arrow">문의</a>
+					<ul class="gnb-depth2">
+						<li><a href="/faq">자주하는 질문</a></li>
+						<li><a href="/qna">Contact Us</a></li>
+					</ul>
+				</li>
+				<li><a href="/notice">공지</a></li>
+			</ul>
+		</div>
+		
+			
+			
+				<div class="tnb is-login">
+					<ul class="infit">
+						<li class="pc-ver top-landing">
+							<a href="/landing" class="btn-landing">이용절차</a>
+						</li>
+						<li>
+							<div class="info stk-mem ">
+								<span><strong class="user-name">박서영</strong>님</span>
+								<span>
+									
+										인증회원
+										
+									
+								</span>
+							</div>
+						</li>
+						<li><a href="/logout">로그아웃</a></li>
+						<li class="mob-ver"><a href="/landing">이용절차</a></li>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+			
+		
+		<div class="mgnb-foot mob-ver">Copyright © 1995-2020 Samsung.<br />All Rights Reserved.</div>
+	</nav>
+
+
+	
+	<div class="dim"></div>
+
+</header>
+
+<script type="text/javascript">
+
+	$(window).on('load, resize',function() {
+		$(".user-name").each(function(){
+			var windowWidth = $( window ).width();
+			if(windowWidth >= 1024){
+				var length = 10; //표시할 글자수 정하기
+			} else {
+				var length = 6; //표시할 글자수 정하기
+			}
+		    $(this).each(function(){
+		        if( $(this).text().length >= length ){
+		            $(this).text( $(this).text().substr(0,length)+'..')
+		            //지정할 글자수 이후 표시할 텍스트
+		        }
+		    });
+		});
+	});
+
+	$(function(){
+		$('.appsetting_login').click(function(){setting();});
+	});
+	$(function(){
+		$('.appsetting_logout').click(function(){setting();});
+	});
+
+	/*
+	* 세션처리
+	*/
+	function checkSession(url) {
+		//alert('egovframework.dividend.cmmn.security.vo.AuthVO@773bd0b7' === '' || 'egovframework.dividend.cmmn.security.vo.AuthVO@773bd0b7' === 'undifiend')
+		if('egovframework.dividend.cmmn.security.vo.AuthVO@773bd0b7' === '' || 'egovframework.dividend.cmmn.security.vo.AuthVO@773bd0b7' === 'undifiend') {
+			//popupOpen('.layer-login');
+			document.location.href = '/mypage/login';
+		} else {
+			document.location.href = ''+ url + '';
+		}
+	}
+
+	function setting() {
+		var appType = '';
+		if(navigator.userAgent.indexOf('DIVIDEND') > -1) {
+			if(appType == 'IOS') {
+				webkit.messageHandlers.iOS.postMessage("settings");
+			} else if(appType == 'ANDROID') {
+				Android.settings();
+			}
+		}
+	}
+
+</script>
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="container">
+	<div class="sub-content">
+		<section class="sub-sec mem-sec">
+			<div class="sub-navi menu">
+				<div class="inner-s">
+					<h2>주주 추가인증</h2>
+					<div class="rnavi">
+						<ul class="infit">
+							<li><a href="/mypage/edit">내 정보 수정</a></li>
+							<li><a href="/mypage/pwd">비밀번호 변경</a></li>
+							<li class="on"><a href="/mypage/address">주주 추가인증</a></li>
+							<li><a href="/mypage/out">회원 탈퇴</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="mem-cont">
+				<div class="inner-s">
+					<h3>주주 추가인증<span class="stit">간편검색으로 등록된 주소지 정보를 입력하신후 검색 버튼을 눌러 <br class="pc-ver" />조회된 도로명 및 지번 주소를 선택해주세요.</span></h3>
+					<div class="input-con">
+						<div class="form-wp">
+							<div class="inp-bx infit stock_cert">
+								<dl class="inp-bx-row ">
+									<dt>증권사(예탁자) 선택</dt>
+									<dd class="cert-address">
+										<div class="cert-address-selected"><a href="javascript:void(0);" title="증권사(예탁자) 선택 축소됨">선택하세요.</a></div>
+										<ul class="cert-address-cate">
+											
+												
+													<li data-codeno="000001" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>교보증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000002" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>신한금융투자(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000003" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>한국투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000004" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>대신증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000005" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>미래에셋대우(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000006" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>신영증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000008" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>유진투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000009" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>한양증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000010" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>메리츠증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000012" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>NH투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000013" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>부국증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000017" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>케이비증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000021" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>한화투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000022" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>현대차증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000024" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>유안타증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000025" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>SK증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+												
+													<li data-codeno="000030" class="">
+														<a href="javascript:void(0);" class="btn-staddr"><span>삼성증권(주)</span></a>
+													</li>
+												
+											
+												
+													<li data-codeno="000031" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>디비금융투자(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000046" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>하이투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000050" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>키움증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000056" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>하나금융투자(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000068" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>아이비케이투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000071" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>케이티비투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000072" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>케이프투자증권(주)</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000086" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>(주)비엔케이투자증권</span></a>
+													</li>
+												
+												
+											
+												
+													<li data-codeno="000752" >
+														<a href="javascript:void(0);" class="btn-staddr"><span>이베스트투자증권(주)</span></a>
+													</li>
+												
+												
+											
+										</ul>
+									</dd>
+								</dl>
+								<div class="inp-bx-row ">
+									<div class="stock_cert_tab">
+										<a href="javascript:void(0);" class="active" title="선택됨">간편검색 </a>
+										<a href="javascript:void(0);" title="선택안됨">수기입력</a>
+									</div>
+									<div class="stock_cert_cont">
+										<dl class="inp-bx-row">
+											<dt>등록 주소 입력<span class="req">*</span></dt>
+											<dd class="cert-address">
+												<div class="cert-address-search-form">
+													<form name="addrForm" id="addrForm" method="post">
+														<input type="hidden" name="currentPage" value="1"/> <!-- 요청 변수 설정 (현재 페이지. currentPage : n > 0) -->
+														<input type="hidden" name="countPerPage" value="10"/><!-- 요청 변수 설정 (페이지당 출력 개수. countPerPage 범위 : 0 < n <= 100) -->
+														<input type="hidden" name="resultType" value="json"/> <!-- 요청 변수 설정 (검색결과형식 설정, json) -->
+														<input type="hidden" name="confmKey" value="U01TX0FVVEgyMDIwMTEwODA5NTYzNTExMDM4NDU= "/><!-- 요청 변수 설정 (승인키) -->
+														
+														<input type="text" name="keyword" id="keyword" class="input-basic" value="" placeholder="주소 검색" required  >
+														<label for="keyword" class="hidden">등록 주소 입력</label>
+														<button class="btn-sc-txt" onclick="searchAddrs(event);return false;">검색</button>
+													</form>
+												</div>
+												<div class="cert-address-search-noti">
+													<span class="none">검색 결과에서 일치하는 주소를 선택하세요.</span>
+													<div class="cert-address-search-noti-ex">
+														<strong>예) 등록된 주소지가 '수원 매탄동 416'일 경우</strong>
+														<span class="num1">지번 주소 : [경기도 수원시 영통구 매탄동 416]<br />또는 도로명 주소 : [경기도 수원시 영통구 삼성로 129] 입력</span>
+														<span class="num2">검색결과에서 맞는 주소 선택</span>
+														<span class="num3">아래 [주주 추가인증] 클릭</span>
+														<span class="etc">간편검색으로 주소지가 검색되지 않을 경우<br />'수기입력' 탭으로 이동후 증권사에 등록한 주소지 정보를 입력</span>
+													</div>
+												</div>
+												<div class="cert-address-search-result">
+													<div class="cert-address-table">
+														<div class="cert-address-search-noti"><strong id="addrTotalCount">0</strong>개의 도로명주소 검색 결과 입니다.</div>
+														<table>
+															<caption>검색 결과</caption>
+															<colgroup>
+																<col style="width:15%">
+																<col>
+																<col style="width:15%">
+															</colgroup>
+															<thead>
+																<tr>
+																	<th scope="col">No</th>
+																	<th scope="col">도로명주소</th>
+																	<th scope="col">우편번호</th>
+																</tr>
+															</thead>
+															<tbody id="addrTbody"></tbody>
+														</table>
+														<div id="address-paginate" class="address-paginate">
+														</div>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class="stock_cert_cont">
+										<dl class="inp-bx-row">
+											<dt>등록 주소 입력<span class="req">*</span></dt>
+											<dd>
+												<div>
+													
+													<input type="text" name="searchAddr" id="searchAddr" class="input-basic" placeholder="증권사에 등록한 주소지 정보를 동일하게 입력" required>
+													<input type="hidden" id="searchZipNo" value=""/>
+													<label for="searchAddr" class="hidden">증권사 등록 주소(도로명주소)</label>
+												</div>
+												<div class="cert-address-search-noti">
+													<span class="etc">등록한 주소지 정보가 기억나지 않을 경우 각 증권사를 통해 문의해 주시기 바랍니다.</span>
+													<div class="cert-address-search-noti-ex">
+														<strong>예) 등록한 주소지가 '경기 수원시 매탄동, 416'일 경우</strong>
+														<span>동일하게 입력 : [경기 수원시 매탄동, 416]</span>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class="btn-area tac">
+										<button class="cert-btn" onclick="getAddr(event);return false;"><span>주주 추가인증</span></button>
+										<div class="cert-address-status">
+											<span class="success">주주 추가인증 완료</span>
+											<span class="fail">주주 추가인증 실패</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script type="text/javascript">
+	var liIndex = -1;
+	
+	$(function(){
+		//추가 주주인증 탭
+	    $(".stock_cert_tab a").on('click', function () {
+			var idx = $(".stock_cert_tab a").index($(this));
+			$(".stock_cert_tab a").each(function(index){
+				if(idx == index){
+					$(this).addClass("active").attr('title','선택됨');;
+					$(".stock_cert_cont").eq(index).show();
+				}else{
+					$(this).removeClass("active").attr('title','선택안됨');;
+					$(".stock_cert_cont").eq(index).hide();
+				}					
+			});
+			$('#searchAddress').val('');
+			$('#searchAddr').val('');
+			$('.cert-address-status span').hide();
+		});
+	    $(".stock_cert_tab a").eq(0).click();
+	})
+	
+	
+	$(function(){
+		//console.log('address list check : ', liIndex);
+
+		$('.cert-address-selected a').on('click',function(){
+			if(!$(this).hasClass("open")){
+				$(this).addClass("open").attr('title','증권사(예탁자) 선택 확장됨');
+				$('.cert-address-cate').show();
+			}else{
+				$(this).removeClass("open").attr('title','증권사(예탁자) 선택 축소됨');
+				$('.cert-address-cate').hide();
+			}
+			
+		});
+		/*
+		$('.cert-address-cate li').on('click',function(){
+			$(this).addClass('on');
+			var code = $(this).find('a').html();
+			$('.cert-address-selected').html(code);
+			$('.cert-address-cate').hide();
+		})
+		
+		 */
+		//증권사 별 탭 & 탭에 입력된 정보 유무에 따른 값 출력
+		$('.cert-address-cate li a').attr('title','선택안됨');
+		$('.cert-address-cate li').on('click',function(){
+			$(this).addClass('on');
+			var code = $(this).find('a').attr('title','선택됨').html();
+			$('.cert-address-selected a').html(code);
+			$('.cert-address-cate').hide();
+
+			$(this).siblings().removeClass('on').find('a').attr('title','선택안됨');
+			liIndex = $(this).index('.cert-address-cate li');
+			var ctBtn = $('.cert-btn');
+			//$(ctBtn).addClass('end').find('span').text('주주 추가 인증');
+			
+			$('.cert-address-selected a').removeClass("open").attr('title','증권사(예탁자) 선택 축소됨').focus();
+
+		});
+
+		// 도로명 주소 선택 시 주소 복사
+		$('.td-address a').on('click',function(){
+			var address = $(this).find('div b').text();
+			$('input#cert-address-input').val(address);
+			$('.cert-address-cate li.on input').val(address);		//도로명 주소 입력시 탭 안의 input에도 동일한 내용 추가
+			if($('.cert-address-cate li.on input').val() != 0){		//도로명 주소 값이 입력되면 입력 값 체크
+				$('.cert-address-cate li.on').addClass('cert-input');
+			}
+			$('.cert-address .cert-address-table').hide();
+		});
+	});
+
+	/**
+	* 검색 주소 엔터키 이벤트
+	*/
+	function enterSearch(e) {
+		var evt_code = (window.netscape) ? ev.which : event.keyCode;
+		if (evt_code == 13) {
+			event.keyCode = 0;
+			searchAddrs(e);
+		}
+	}
+
+	/**
+	* 도로명 주소 검색
+	*/
+	function searchAddrs(e) {
+		e.preventDefault();
+
+		if(liIndex < 0) {
+			alert('증권사를 선택하시기 바랍니다.');
+			return false;
+		}
+
+		// 적용예 (api 호출 전에 검색어 체크)
+		if (!checkSearchedWord(document.getElementById('keyword'))) {
+			return ;
+		}
+
+		$.ajax({
+			url :'https://www.juso.go.kr/addrlink/addrLinkApiJsonp.do' //인터넷망
+			,type:"post"
+			,data:$("#addrForm").serialize()
+			,dataType:"jsonp"
+			,crossDomain:true
+			,success:function(jsonStr){
+				$("#addrTbody").html("");
+				$('input#searchAddr').val('');
+
+				var totalCount = jsonStr.results.common.totalCount;
+				$("#addrTotalCount").html(totalCount);
+
+				var errCode = jsonStr.results.common.errorCode;
+				var errDesc = jsonStr.results.common.errorMessage;
+
+				if(errCode != "0"){
+					console.log(errCode+"="+errDesc);
+					htmlStr += '<tr>';
+					htmlStr += '<td colspan="3" class="ad-none">['+errCode + '] ' + errDesc+'</td>';
+					htmlStr += '</tr>';
+				}else{
+					var htmlStr = "";
+					if(jsonStr != null) {
+						var idx = 0;
+						$(jsonStr.results.juso).each(function() {
+							var juso = this;
+							htmlStr += '<tr>';
+							htmlStr += '<td class="td-address-num">'+ ++idx +'</td>';
+							htmlStr += '<td class="td-address">';
+							htmlStr += '<a href="javascript:void(0);">';
+							htmlStr += '<div data-road="'+this.roadAddr+'" data-zipno="'+this.zipNo+'"><div><b>'+ this.roadAddr + '</b></div>';
+							//htmlStr += '<p>[지번] <span id="">'+this.jibunAddr+'c</span></p>';
+							htmlStr += '<p>[지번] <span id="">'+this.jibunAddr+'c</span></p>';
+							htmlStr += '</div>';
+							htmlStr += '</a></td><td class="td-zipcode">'+this.zipNo+'</td>';
+							htmlStr += '</tr>';
+						});
+					} else {
+						htmlStr += '<tr>';
+						//htmlStr += '<td colspan="3" class="ad-none">찾으시는 주소를 입력해 주세요.</td>';
+						htmlStr += '<td colspan="3" class="ad-none">찾으시는 주소를 입력해 주세요. </td>';
+						htmlStr += '</tr>';
+					}
+					$('#addrTbody').html(htmlStr);
+					addressPageMake(jsonStr);
+				}
+
+				// 도로명 주소 선택 시 주소 복사
+				$('.td-address a').on('click',function(){
+					var address = $(this).find('div b').text();
+					var roadAddr = $(this).find('div').data('road');
+					var zipno = $(this).find('div').data('zipno');
+
+					$('.cert-address-search-result .cert-address-table').hide();
+					$('input#keyword').val(address);
+					$('input#searchAddr').val(address);
+					$('input#searchZipNo').val(zipno);
+				})
+
+				$('.cert-address-search-result .cert-address-table').show();
+			}
+			,error: function(xhr,status, error){
+				alert("에러발생");
+			}
+		});
+	}
+
+	function goAddressPage(e, page) {
+		var frm = document.addrForm;
+		frm.currentPage.value = page;
+		searchAddrs(e);
+	}
+
+	function addressPageMake(jsonStr){
+		var common = jsonStr.results.common;
+		var total = common.totalCount; // 총건수
+		var pageNum = common.currentPage;// 현재페이지
+		var paggingStr = "";
+		if(total < 1){
+		}else{
+			var PAGEBLOCK= common.countPerPage;
+			var pageSize= common.countPerPage;
+			var totalPages = Math.floor((total-1)/pageSize) + 1;
+			var firstPage = Math.floor((pageNum-1)/PAGEBLOCK) * PAGEBLOCK + 1;
+
+			if( firstPage <= 0 ) firstPage = 1;
+			var lastPage = firstPage-1 + PAGEBLOCK;
+			if( lastPage > totalPages ) lastPage = totalPages;
+			var nextPage = lastPage+1 ;
+			var prePage = firstPage-5 ;
+
+			if( firstPage > PAGEBLOCK ){
+				paggingStr +=  "<a href='javascript:void(0);' onclick='goAddressPage(event, "+prePage+");'>◁</a>  " ;
+			}
+			for( i=firstPage; i<=lastPage; i++ ){
+				if( pageNum == i )
+					paggingStr += "<a title='현재페이지' style='font-weight:bold;color:blue;font-size:15px;' href='javascript:void(0);' onclick='goAddressPage(event, "+i+");'>" + i + "</a>  ";
+				else
+					paggingStr += "<a href='javascript:void(0);' onclick='goAddressPage(event, "+i+");'>" + i + "</a>  ";
+			}
+			if( lastPage < totalPages ){
+				paggingStr +=  "<a href='javascript:void(0);' onclick='goAddressPage(event, "+nextPage+");' title='다음페이지'>▷</a>";
+			}
+			$("#address-paginate").html(paggingStr);
+		}
+	}
+
+	function getAddr(e) {
+		e.preventDefault();
+		e.target.disabled = true;
+
+		if(liIndex < 0) {
+			alert('증권사를 다시 선택해 주시기 바랍니다.');
+			e.target.disabled = false;
+			return false;
+		}
+
+		var roadAddr = $('input#searchAddr').val();
+		var zipno = $('input#searchZipNo').val();
+
+		var li = $('.cert-address-cate li.on');
+		var accountNo = li.data('codeno');
+
+		var token = "4c82b926-0f3d-4c90-b07c-ea3b214b1d60";
+		var header = "X-CSRF-TOKEN";
+		var ctBtn = $('.cert-btn');
+
+		var data = JSON.stringify( {accountNo:accountNo, roadAddr:roadAddr});
+
+		if(li.index('.cert-address-cate li') < 0) {
+			alert('증권사를 선택하시기 바랍니다.');
+			return false;
+		}
+
+		liIndex = li.index('.cert-address-cate li');
+
+		if($('input#searchAddr').val() == '') {
+			return false;
+		}
+
+		//$(ctBtn).addClass('loading').find('span').text('주주 확인중입니다.');
+
+		$.ajax({
+			url: '/mypage/address',
+			type: 'PUT',
+			dataType: 'json',
+			contentType: "application/json",
+			data: data,
+			beforeSend : function(xhr) {
+				xhr.setRequestHeader(header, token);
+			},
+			crossDomain: true,
+			success: function(response) {
+				console.log('success', response);
+				if (response > 0 ) {
+					liIndex = null;
+					e.target.disabled = false;
+
+					$('.cert-address-status').find('span').hide();
+					$('.cert-address-status').find('.success').fadeIn();
+					//alert('입력하신 정보로 인증되었습니다.');
+				} else {
+					liIndex = null;
+					e.target.disabled = false;
+
+					$('.cert-address-status').find('span').hide();
+					$('.cert-address-status').find('.fail').fadeIn();
+					//alert('입력하신 정보가 맞지 않습니다.');
+				}
+			},
+			error: function(response) {
+				console.log('error')
+				console.log(response);
+				//$(ctBtn).removeClass('loading');
+				//$(ctBtn).addClass('end').find('span').text('주주 인증실패');
+				//$('.cert-address-cate li').eq(liIndex).addClass('cert-input');
+				//$('.cert-address-cate li').eq(liIndex).removeClass('cert-ok');
+				e.target.disabled = false;
+				liIndex = -1;
+				$('.cert-address-status').find('span').hide();
+				$('.cert-address-status').find('.fail').fadeIn();
+				//alert('입력하신 정보가 맞지 않습니다.');
+			}
+		});
+	}
+
+	</script>
+</div>
+
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer id="footer">
+	<div class="inner">
+		<h2>SAMSUNG</h2>
+		<div class="foot-content">
+			<ul class="foot-menu infit">
+				<li><a href="/terms/personal"><b>개인정보처리방침</b></a></li>
+				<li><a href="/terms/condition">이용약관</a></li>
+				<li><a href="/terms/email">이메일무단수집거부</a></li>
+				<li><a href="javascript:popupOpen('.layer-sitemap');">사이트맵</a></li>
+			</ul>
+			<div class="foot-info">
+				경기도 수원시 영통구 삼성로 129 (매탄동) 삼성전자 주식회사 <br class="mob-ver"><span class="pc-ver">ㅣ</span>대표이사 김기남<span>ㅣ</span>사업자등록번호 124-81-00998 <a href="javascript:void(0);" title="사업자정보확인 사이트로 이동" onclick="javascript:footerlink();">사업자정보확인</a> <br class="mob-ver"><br class="pc-ver">대표전화 1811-6565<span>ㅣ</span>이메일 dividend@samsung.com
+			</div>
+			<copy>Copyright © 1995-2020 Samsung. All Rights Reserved.</copy>
+			<a href="javascript:void(0);" id="top-btn">위로</a>
+		</div>
+	</div>
+</footer>
+<div class="loading-wp">
+	<div class="load-cont">
+		<div class="dot-loader"></div>
+		<div class="dot-loader dot-loader--2"></div>
+		<div class="dot-loader dot-loader--3"></div>
+	</div>
+</div>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/common.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/publish.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/dividend.js"></script>
+<script type="text/javascript" src="https://dividend.samsung.com/static/js/Chart.min.js"></script>
+<script type="text/javaScript">
+/* 201104 - 안드로이드 주소 추가 */
+function footerlink() {
+	var appType = '';
+	if(navigator.userAgent.indexOf('DIVIDEND') > -1) {
+		
+		if(appType == 'IOS') {
+			webkit.messageHandlers.iOS.postMessage("showBrowser(https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2000374001130200515&pageUnit=10&searchCnd=wrkr_no&searchKrwd=1248100998&pageIndex=1)");
+		} else if(appType == 'ANDROID') {
+			Android.showBrowser("https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2000374001130200515&pageUnit=10&searchCnd=wrkr_no&searchKrwd=1248100998&pageIndex=1");
+		}
+	} else {
+		location.href='https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2000374001130200515&pageUnit=10&searchCnd=wrkr_no&searchKrwd=1248100998&pageIndex=1';
+	}
+}
+
+$( document ).ready(function() {
+	$('.loading-wp').fadeOut(500);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="layer-wrap">
+<div class="ly-content layer-sitemap">
+	<div class="ly-cont">
+		<div class="layer smap-wp infit">
+			<a href="javascript:popupClose('.layer-sitemap');" class="ly-close">닫기</a>
+			<div class="smap-lcon"><div class="cont"><img src="https://dividend.samsung.com/static/images/logo.png" alt="SAMSUNG"><span>삼성전자 배당조회<br><em>Web Service</em></span></div></div>
+			<div class="smap-rcon">
+				<h3>사이트맵</h3>
+				<ul class="sm-depth1 infit">
+					<li>
+						<a href="javascript:void(0);">소개</a>
+						<ul class="sm-depth2">
+							<li><a href="/intro">소개</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">마이페이지</a>
+						<ul class="sm-depth2">
+							<li><<a href="/mypage/dividend?year=2020">배당조회</a></li>
+							<li><a href="/mypage/edit">내 정보 수정 </a></li>
+							
+						</ul>
+					</li>
+					
+					<li>
+						<a href="javascript:void(0);" class="arrow">문의 </a>
+						<ul class="sm-depth2">
+							<li><a href="/faq">자주하는 질문</a></li>
+							<li><a href="/qna">Contact Us </a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);">공지</a>
+						<ul class="sm-depth2">
+							<li><a href="/notice">공지</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">약관</a>
+						<ul class="sm-depth2">
+							<li><a href="/terms/condition">이용약관</a></li>
+							<li><a href="/terms/personal">개인정보처리방침</a></li>
+							<li><a href="/terms/email">이메일무단수집거부</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="dim"></div>
+</div>
+
+</html>

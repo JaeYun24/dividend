@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 배당조회서비스</title>
+<link rel="stylesheet" type="text/css" href="../../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<script src="../../js/libs/jquery.min.js"></script>
+<script src="../../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="scr-cust">
+		<h1 class="logo"><a href="index.html"><span class="mark">SAMSUNG</span><span class="tt">배당조회서비스</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<ul class="gnb-depth1 infit">
+					<li>
+						<a href="javascript:void(0);" class="arrow">주식 관련 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_stock/data.html">주주 데이터</a></li>
+							<li><a href="../ad_stock/update.html">주주정보 업데이트</a></li>
+							<li><a href="../ad_stock/update_list.html">업데이트 내역</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">회원 관련</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_mem/info.html">회원 정보</a></li>
+							<li><a href="../ad_mem/inflow.html">회원 유입 현황</a></li>
+							<li><a href="../ad_mem/mail.html">메일 발송</a></li>
+							<li><a href="../ad_mem/sms.html">문자 발송</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">게시판 관리</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_board/notice.html">공지사항</a></li>
+							<li><a href="../ad_board/faq.html">자주하는 질문</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">약관</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_terms/condition.html">이용약관</a></li>
+							<li><a href="../ad_terms/personal.html">개인정보취급방침</a></li>
+							<li><a href="../ad_terms/email.html">이메일무단수집거부</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">로그 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_log/log_list.html">관리자 로그 기록</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="gnb-footer">
+				<div class="tnb">
+					<ul>
+						<li><a href="../../main/index.html">배당조회서비스 홈페이지</a></li>
+						<li><a href="#">관리자 로그아웃</a></li>
+					</ul>
+				</div>
+				<div class="copy arl">© SAMSUNG</div>
+			</div>
+		</nav>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="contents">
+			<div class="cont-tit">
+				<h2>메일 발송</h2>
+				<div class="page-root">
+					<span>홈</span>
+					<span class="bar">/</span>
+					<span>회원 관련</span>
+					<span class="bar">/</span>
+					<span>메일 발송</span>
+				</div>
+			</div>
+			<section class="cont-sec">
+				<div class="sec-top">
+					<div class="ex"><b>24,080</b>개의 <strong class="point">메일 발송</strong> 내역 입니다.</div>
+					<div class="nav infit">
+						<input type="text" name="pgNum" id="pgNum" value="1" class="arr-btn arl" >
+						<span class="arl">of 963,622</span>
+						<button type="button" class="arr-btn prev" >prev</button>
+						<button type="button" class="arr-btn next" >next</button>
+					</div>
+				</div>
+				<div class="sec-con">
+					<!-- [s] 검색영역 -->
+					<div class="search-con infit">
+						<div class="sc-wp">
+							<input type="text" name="scInp" id="scInp" value="" placeholder="검색어를 입력하세요." class="input-basic w720">
+							<label for="scInp" class="hidden">검색입력</label>
+							<button class="btn-sc">검색</button>
+						</div>
+						<div class="btn-area">
+							<button type="button" class="btn-norm sel-delete" disabled>선택 삭제</button>
+							<button type="button" onclick="location.href='mail_write.html'" class="btn-norm blk">메일 작성</button>
+						</div>
+					</div>
+					<!-- [e] 검색영역 -->
+					<!-- [s] 리스트영역 -->
+					<div class="tb-con">
+						<div class="tb-list scroll scr-cust2">
+							<table>
+								<caption class="hidden">회원정보</caption>
+								<colgroup>
+									<col width="50">
+									<col width="8%">
+									<col width="auto">
+									<col width="10%">
+									<col width="10%">
+									<col width="10%">
+									<col width="12%">
+									<col width="130">
+								</colgroup>
+								<thead class="fixed-top">
+									<tr>
+										<th width="50">
+					                        <input type="checkbox" name="dataChk_all" value="" id="dataChk_all" class="chk wht">
+					        				<label for="dataChk_all" class="chk-label">전체체크</label>
+										</th>
+										<th width="8%">No.</th>
+										<th width="auto">제목</th>
+										<th width="10%">구분</th>
+										<th width="10%">등록일</th>
+										<th width="10%">발송일</th>
+										<th width="12%">기능</th>
+										<th width="130" class="lbord">관리</th>
+									</tr>
+								</thead>
+								<tbody class="tb-body">
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_1" class="chk">
+										   <label for="dataChk_1" class="chk-label">체크1</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">[멤버십] 개인정보처리방침 업데이트</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>발송전</td>
+										<td><button type="button" class="btn-sm">발송 요청</button></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_2" class="chk">
+										   <label for="dataChk_2" class="chk-label">체크2</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>발송전</td>
+										<td><button type="button" class="btn-sm">발송 요청</button></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_3" class="chk">
+										   <label for="dataChk_3" class="chk-label">체크3</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">[멤버십] 개인정보처리방침 업데이트</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_4" class="chk">
+										   <label for="dataChk_4" class="chk-label">체크4</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_5" class="chk">
+										   <label for="dataChk_5" class="chk-label">체크5</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_6" class="chk">
+										   <label for="dataChk_6" class="chk-label">체크6</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_7" class="chk">
+										   <label for="dataChk_7" class="chk-label">체크7</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_8" class="chk">
+										   <label for="dataChk_8" class="chk-label">체크8</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_9" class="chk">
+										   <label for="dataChk_9" class="chk-label">체크9</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_10" class="chk">
+										   <label for="dataChk_10" class="chk-label">체크10</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_11" class="chk">
+										   <label for="dataChk_11" class="chk-label">체크11</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+										   <input type="checkbox" name="dataChk" value="" id="dataChk_12" class="chk">
+										   <label for="dataChk_12" class="chk-label">체크12</label>
+										</td>
+										<td class="arl">24,080</td>
+										<td class="tit tal"><a href="mail_view.html">2020년 3분기 주주 배당정보 업데이트 안내</a></td>
+										<td>전체회원</td>
+										<td class="arl">2020-07-10</td>
+										<td>2020-07-10</td>
+										<td><a href="javascript:popupOpen('.send-check');" class="btn-sm wht">발송내역 확인</a></td>
+										<td class="lbord">
+											<button type="button" onclick="location.href='mail_edit.html'" class="edit">관리</button>
+											<button type="button" class="delete">삭제</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- [e] 리스트영역 -->
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+</div>
+<!-- [e] Wrapper -->
+
+<!-- [s] layer -->
+<div class="layer-wrap">
+	<!-- [s] 발송내역확인 팝업 -->
+	<div class="ly-content send-check" style="display:table;">
+		<div class="ly-cont">
+			<div class="layer send-wp">
+				<div class="send-con">
+					<h3>발송 내역 확인</h3>
+					<p class="total">총 <span class="arl">186,234,567</span> 건 중</p>
+					<ul class="sd-cc infit">
+						<li>
+							<p class="tt">성공</p>
+							<div class="num arl">186,234,561</div>
+						</li>
+						<li>
+							<p class="tt">실패</p>
+							<div class="num red arl">6</div>
+						</li>
+					</ul>
+					<div class="btn mt30"><a href="javascript:popupClose('.send-check');" class="ly-close btn-sm blk ">닫기</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- [e] 발송내역확인 팝업 -->
+
+	<div class="dim"></div>
+</div>
+<!-- [e] layer -->
+
+<script src="../js/admin.js"></script>
+<script>
+$(document).ready(function () {
+	//전체체크
+	$("input[name=dataChk_all]").click(function(){
+		if ($(this).is(':checked')) {
+			$("input[name=dataChk]").prop("checked", true);
+		} else {
+			$("input[name=dataChk]").prop("checked", false);
+		}
+	});
+
+	//선택삭제
+	$("input[type=checkbox]").click(function(){
+
+		if ($("input[type=checkbox]").is(':checked')) {
+			$("button.sel-delete").prop("disabled", false);
+		} else {
+			$("button.sel-delete").prop("disabled", true);
+		}
+	});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 배당조회서비스</title>
+<link rel="stylesheet" type="text/css" href="../../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<script src="../../js/libs/jquery.min.js"></script>
+<script src="../../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="scr-cust">
+		<h1 class="logo"><a href="index.html"><span class="mark">SAMSUNG</span><span class="tt">배당조회서비스</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<ul class="gnb-depth1 infit">
+					<li>
+						<a href="javascript:void(0);" class="arrow">주식 관련 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_stock/data.html">주주 데이터</a></li>
+							<li><a href="../ad_stock/update.html">주주정보 업데이트</a></li>
+							<li><a href="../ad_stock/update_list.html">업데이트 내역</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">회원 관련</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_mem/info.html">회원 정보</a></li>
+							<li><a href="../ad_mem/inflow.html">회원 유입 현황</a></li>
+							<li><a href="../ad_mem/mail.html">메일 발송</a></li>
+							<li><a href="../ad_mem/sms.html">문자 발송</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">게시판 관리</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_board/notice.html">공지사항</a></li>
+							<li><a href="../ad_board/faq.html">자주하는 질문</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">약관</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_terms/condition.html">이용약관</a></li>
+							<li><a href="../ad_terms/personal.html">개인정보취급방침</a></li>
+							<li><a href="../ad_terms/email.html">이메일무단수집거부</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">로그 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_log/log_list.html">관리자 로그 기록</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="gnb-footer">
+				<div class="tnb">
+					<ul>
+						<li><a href="../../main/index.html">배당조회서비스 홈페이지</a></li>
+						<li><a href="#">관리자 로그아웃</a></li>
+					</ul>
+				</div>
+				<div class="copy arl">© SAMSUNG</div>
+			</div>
+		</nav>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="contents">
+			<div class="cont-tit">
+				<h2>수정</h2>
+				<div class="page-root">
+					<span>홈</span>
+					<span class="bar">/</span>
+					<span>게시판 관리</span>
+					<span class="bar">/</span>
+					<span>공지사항</span>
+					<span class="bar">/</span>
+					<span>수정</span>
+				</div>
+			</div>
+			<section class="cont-sec">
+				<div class="sec-top">
+					<div class="btn-area infit">
+						<button type="button" onclick="location.href='notice.html'" class="btn-norm" >목록</button>
+						<button type="button" class="btn-norm gray" >수정</button>
+					</div>
+				</div>
+				<div class="sec-con">
+					<!-- [s] 등록 영역 -->
+					<div class="write-con">
+						<!-- 기본정보 -->
+						<div class="stit">기본 정보</div>
+						<div class="cont">
+							<ul class="wform perc">
+								<li>
+									<p class="tt">제목</p>
+									<div class="inp">
+										<input type="text" name="mTitle" id="mTitle" class="input-basic" value=" 멤버쉽 개인정보 취급방침 변경" >
+										<label for="mTitle" class="hidden">제목입력</label>
+									</div>
+								</li>
+							</ul>
+							<!-- [s] 파일첨부영역 -->
+							<div class="update-date">
+								<div class="att-file">
+									<div class="file-top">
+										<div class="stt">파일첨부</div>
+										<div class="btn-area">
+											<span class="size arl">38KB/10MB</span>
+											<button type="button" class="sel-delete btn-norm" disabled>선택 삭제</button>
+											<div class="file-a"><div class="btn-norm blk">파일 선택<input type="file" id="file" multiple /></div></div>
+										</div>
+									</div>
+								   <!-- 첨부파일 보기 -->
+								   <div id="fileList" class="infit"></div>
+								</div>
+							</div>
+							<!-- [e] 파일첨부영역 -->
+						</div>
+
+						<!-- 내용 -->
+						<div class="cont-text mt20">
+							<div class="stit">내용</div>
+							<div class="cont">
+								<div class="editor"><!--에디터영역--></div>
+							</div>
+						</div>
+
+					</div>
+					<!-- [e] 등록 영역 -->
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<script src="../js/admin.js"></script>
+<script>
+$(document).ready(function () {
+	//파일선택
+	$("body").on("change", ".file-a input[type=file]", function(){
+		// GET THE FILE INPUT.
+		var fi = document.getElementById('file');
+
+		// VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+		if (fi.files.length > 0) {
+			$("button.sel-up").prop("disabled", false);
+
+			// RUN A LOOP TO CHECK EACH SELECTED FILE.
+			for (var i = 0; i <= fi.files.length - 1; i++) {
+
+				var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+				var fsize = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+
+				var iSize = (fi.files.item(i).size / 1024);
+				iSize = (Math.round(iSize * 100) / 100)
+				// SHOW THE EXTRACTED DETAILS OF THE FILE.
+				document.getElementById('fileList').innerHTML =
+					document.getElementById('fileList').innerHTML + '<div class="fm"> ' +
+						'<input type="checkbox" name="fileChk" id="fileChk_'+ i +'" class="tchk"><label for="fileChk_'+ i +'" class="tchk-label">'+ fname +'</label>'+ '<span>' + iSize + 'kb</span> </div>';
+
+				//선택삭제
+				$("input[name=fileChk]").click(function(){
+
+					if ($("input[name=fileChk]").is(':checked')) {
+						$("button.sel-delete").prop("disabled", false);
+						$("button.sel-delete").click(function(){
+							var idx = $("#fileList .fm").index($(this));
+							var val = "";
+							$(".file-a input[type=file]").eq(idx).val("");
+							$("input[name=fileChk]:checked").parents('.fm').remove();
+							$("button.sel-delete").prop("disabled", true);
+
+							/*파일업로드버튼 활성화*/
+							var fileUp = $("#fileList .fm").length;
+							if (fileUp > 0) {
+								$("button.sel-up").prop("disabled", false);
+							}else{
+								$("button.sel-up").prop("disabled", true);
+							}
+						});
+					} else {
+						$("button.sel-delete").prop("disabled", true);
+					}
+				});
+			}
+		}
+		else {
+			alert('파일을 선택해주세요.');
+		}
+	});
+
+});
+</script>
+</body>
+</html>

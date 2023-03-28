@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 주주배당조회</title>
+<link rel="stylesheet" type="text/css" href="../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/import.css">
+<script src="../js/libs/jquery.min.js"></script>
+<script src="../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="header sub">
+		<h1 class="logo"><a href="../main/index.html"><span class="mark">SAMSUNG</span><span class="tt">삼성전자 배당조회</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<div class="mgnb-logo mob-ver"><a href="../main/index.html"><img src="../images/logo.png" alt="SAMSUNG"><span>주주배당조회</span></a></div>
+				<ul class="gnb-depth1 infit">
+					<li><a href="../intro/intro.html">소개</a></li>
+					<li>
+						<a href="../mypage/dividend.html" class="arrow">마이페이지</a>
+						<ul class="gnb-depth2">
+							<li><a href="../mypage/dividend.html">배당 조회</a></li>
+							<li><a href="../mypage/edit.html">내 정보 수정</a></li>
+							<li><a href="../mypage/out.html">회원 탈퇴</a></li>
+						</ul>
+					</li>
+					<li><a href="../stock/info.html">주식정보</a></li>					
+					<li>
+						<a href="../customer/notice.html" class="arrow">문의</a>
+						<ul class="gnb-depth2">
+							<li><a href="../customer/faq.html">자주하는 질문</a></li>
+							<li><a href="../customer/qna.html">Contact us</a></li>
+						</ul>
+					</li>
+					<li><a href="../customer/notice.html">공지</a></li>
+				</ul>
+			</div>
+			<!-- 로그인전 -->
+			<div class="tnb"><!-- // 로그인후 class="is-login" 추가 -->
+				<ul class="infit">
+					<li><a href="../member/join_agree.html" class="join">회원가입</a></li>
+					<li class="rbtn"><a href="javascript:popupOpen('.layer-login');">로그인</a></li>
+				</ul>
+			</div>
+			<!-- // 로그인후 (일반회원/인증회원) -->
+			<!--
+			<div class="tnb is-login">
+				<ul class="infit">
+					<li>
+						<div class="info nom-mem">
+							<span>김으뜸님</span>
+							<span>일반회원</span>
+						</div>
+						<div class="info stk-mem">
+							<span>김으뜸님</span>
+							<span>인증회원</span>
+						</div>
+					</li>
+					<li class="rbtn"><a href="#">로그아웃</a></li>
+				</ul>
+			</div>
+			-->
+			<div class="mgnb-foot mob-ver">© 2020 SAMSUNG All Rights Reserved.</div>
+		</nav>
+
+		<a href="javascript:void(0);" class="mgnb-open">
+		  <label>모바일 전체메뉴</label>
+		  <span class="header-button-item top"></span>
+		  <span class="header-button-item middle"></span>
+		  <span class="header-button-item bottom"></span>
+	  	</a>
+		<div class="dim"></div>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="sub-content">
+			<section class="sub-sec mem-sec">
+				<div class="sub-navi">
+					<div class="inner-s">
+						<h2>내 정보 수정</h2>
+					</div>
+				</div>
+				<div class="mem-cont">
+					<div class="inner-s">
+						<h3>내 정보 수정<span class="stit">내국인 (국내거주 외국인 포함)</span></h3>
+						<!-- [s] 입력영역 -->
+						<div class="input-con">
+							<div class="form-wp">
+								<!-- [s] 아이디/비밀번호 -->
+								<div class="inp-bx infit">
+									<dl>
+										<dt>아이디<span class="req">*</span></dt>
+										<dd>
+											<input type="text" name="mId" id="mId" class="input-basic" value="samsung" required="required" disabled>
+											<label for="mId" class="hidden">아이디를 입력하세요.</label>
+										</dd>
+										<dt>비밀번호<span class="req">*</span></dt>
+										<dd>
+											<input type="password" name="mPw" id="mPw_1" class="input-basic" placeholder="비밀번호를 입력하세요." required="required" >
+											<label for="mPw_1" class="hidden">비밀번호를 입력하세요.</label>
+											<span class="ex new">비밀번호를 변경하시려면 새 비밀번호를 입력하세요.</span>
+										</dd>
+										<dt>비밀번호 확인<span class="req">*</span></dt>
+										<dd>
+											<input type="password" name="mPw" id="mPw_2" class="input-basic" placeholder="비밀번호를 한번 더 입력하세요." required="required" >
+											<label for="mPw_2" class="hidden">비밀번호를 한번 더 입력하세요.</label>
+										</dd>
+									</dl>
+								</div>
+								<!-- [e] 아이디/비밀번호 -->
+
+								<!-- [s] 정보입력 -->
+								<div class="inp-bx infit">
+									<dl>
+										<dt>이름<span class="req">*</span></dt>
+										<dd>
+											<input type="text" name="mName" id="mName" class="input-basic" value="홍길동" required="required" disabled>
+											<label for="mName" class="hidden">이름입력</label>
+											<!-- 정보수정에서만 노출 -->
+											<span class="tag norm">일반회원</span>
+											<!-- <span class="tag cert">인증회원</span> -->
+										</dd>
+										<dt>생년월일<span class="req">*</span></dt>
+										<dd class="birth">
+											<select name="birthDate" id="yearSel" class="select-basic" disabled>
+												<option value="2020">2020</option>
+												<option value="2019">2019</option>
+												<option value="2018">2018</option>
+											</select>
+											<label for="yearSel" class="hidden">년도 선택</label>
+											<select name="birthDate" id="monthSel" class="select-basic" disabled>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+											<label for="monthSel" class="hidden">월 선택</label>
+											<select name="birthDate" id="daySel" class="select-basic" disabled>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+											<label for="daySel" class="hidden">일 선택</label>
+										</dd>
+										<dt>성별<span class="req">*</span></dt>
+										<dd>
+											<div class="gender-sel">
+												<a href="javascript:void(0);" class="selected">남</a>
+												<a href="javascript:void(0);">여</a>
+											</div>
+										</dd>
+										<dt>휴대폰<span class="req">*</span></dt>
+										<dd>
+											<input type="text" name="mTel" id="mTel" class="input-basic" value="010-1234-5678" required="required">
+											<label for="mTel" class="hidden">휴대폰입력</label>
+										</dd>
+										<dt>이메일<span class="req">*</span></dt>
+										<dd>
+											<input type="text" name="mMail" id="mMail" class="input-basic" value="samsung@samsung.com" required="required">
+											<label for="mMail" class="hidden">이메일입력</label>
+										</dd>
+										<dt>주소<span class="req">*</span><a href="#" class="addr-btn">주소 검색</a></dt>
+										<dd class="addr">
+											<input type="text" name="mAddr" id="mPnum" class="input-basic num" value="12345" required="required">
+											<label for="mPnum" class="hidden">우편번호입력</label>
+											<input type="text" name="mAddr" id="mAddr_1" class="input-basic adr" value="경기도 수원시 영통구 삼성로 129(매탄동)" required="required">
+											<label for="mAddr_1" class="hidden">주소입력</label>
+											<input type="text" name="mAddr" id="mAddr_2" class="input-basic full" value="삼성전자주식회사 1층" required="required">
+											<label for="mAddr_2" class="hidden">상세주소입력</label>
+										</dd>
+									</dl>
+								</div>
+								<div class="btn-bot">
+									<button type="button" class="cert-btn" disabled><span>본인 인증 하기</span></button>
+									<!-- <span class="fail">주주 인증이 실패하였습니다. 다시 시도하세요.</span> -->
+								</div>
+								<!-- [e] 정보입력 -->
+							</div>
+
+							<div class="btn-area">
+								<a href="javascript:history.back();" class="btn-sm prev"><span>이전</span></a>
+								<button type="submit" id="btnSubmit" onclick="location.href='join_end.html'" class="btn-norm" disabled>수정 하기</button>
+							</div>
+						</div>
+						<!-- [e] 입력영역 -->
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+	<!-- [s] Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>SAMSUNG</h2>
+			<div class="foot-content">
+				<ul class="foot-menu infit">
+					<li><a href="../terms/personal.html"><b>개인정보처리방침</b></a></li>
+					<li><a href="../terms/condition.html">이용약관</a></li>
+					<li><a href="../terms/email.html">이메일 무단 수집거부</a></li>
+					<li><a href="javascript:popupOpen('.layer-sitemap');">사이트맵</a></li>
+				</ul>
+				<div class="foot-info">
+					경기도 수원시 영통구 삼성로 129 (매탄동) 삼성전자주식회사<span>ㅣ</span>대표이사 김기남<span>ㅣ</span>사업자등록번호 124-81-00998<br class="mob-ver">
+					<a href="#" target="_blank">사업자정보확인</a>
+				</div>
+				<copy>Copyright © 1995-2020 SAMSUNG All Rights Reserved.</copy>
+				<a href="javascript:void(0);" id="top-btn">위로</a>
+			</div>
+		</div>
+	</footer>
+	<!-- [e] Footer -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<script src="../js/common.js"></script>
+<script src="../js/publish.js"></script>
+<script>
+$(document).ready(function () {
+	$('.cert-btn').on('click', function(){
+		var ctBtn = $('.cert-btn');
+		$(ctBtn).addClass('loading').find('span').text('본인 인증 확인 중입니다.');
+		setTimeout(function(){
+			$(ctBtn).removeClass('loading');
+			$(ctBtn).addClass('end').find('span').text('본인 인증 완료');
+		}, 1000);
+	});
+});
+</script>
+</body>
+</html>

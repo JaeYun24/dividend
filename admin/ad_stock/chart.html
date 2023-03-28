@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>SAMSUNG 배당조회서비스</title>
+<link rel="stylesheet" type="text/css" href="../../fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="../../css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<script src="../../js/libs/jquery.min.js"></script>
+<script src="../../js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<!-- [s] Wrapper -->
+<div id="wrapper">
+
+	<!-- Skipnav -->
+	<div id="skipToContent" class="skipnav">
+		<a href="#container">본문 바로가기</a>
+	</div>
+
+	<!-- [s] Header -->
+	<header id="header" class="scr-cust">
+		<h1 class="logo"><a href="index.html"><span class="mark">SAMSUNG</span><span class="tt">배당조회서비스</span></a></h1>
+		<nav class="gnb">
+			<div class="gnb-wrap">
+				<ul class="gnb-depth1 infit">
+					<li>
+						<a href="javascript:void(0);" class="arrow">주식 관련 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_stock/data.html">주주 데이터</a></li>
+							<li><a href="../ad_stock/update.html">주주정보 업데이트</a></li>
+							<li><a href="../ad_stock/update_list.html">업데이트 내역</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">회원 관련</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_mem/info.html">회원 정보</a></li>
+							<li><a href="../ad_mem/inflow.html">회원 유입 현황</a></li>
+							<li><a href="../ad_mem/mail.html">메일 발송</a></li>
+							<li><a href="../ad_mem/sms.html">문자 발송</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">게시판 관리</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_board/notice.html">공지사항</a></li>
+							<li><a href="../ad_board/faq.html">자주하는 질문</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">약관</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_terms/condition.html">이용약관</a></li>
+							<li><a href="../ad_terms/personal.html">개인정보취급방침</a></li>
+							<li><a href="../ad_terms/email.html">이메일무단수집거부</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="arrow">로그 정보</a>
+						<ul class="gnb-depth2">
+							<li><a href="../ad_log/log_list.html">관리자 로그 기록</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="gnb-footer">
+				<div class="tnb">
+					<ul>
+						<li><a href="../../main/index.html">배당조회서비스 홈페이지</a></li>
+						<li><a href="#">관리자 로그아웃</a></li>
+					</ul>
+				</div>
+				<div class="copy arl">© SAMSUNG</div>
+			</div>
+		</nav>
+	</header>
+	<!-- [e] Header -->
+
+	<!-- [s] Container -->
+	<div id="container">
+		<div class="contents">
+			<div class="cont-tit">
+				<h2>주주 데이터</h2>
+				<div class="page-root">
+					<span>홈</span>
+					<span class="bar">/</span>
+					<span>주식 관련 정보</span>
+					<span class="bar">/</span>
+					<span>주주 데이터</span>
+				</div>
+			</div>
+			<section class="cont-sec" >
+				<div id="chart"></div>
+				<div id="chart2"></div>
+				<div id="chart3"></div>
+			</section>
+		</div>
+	</div>
+	<!-- [e] Container -->
+
+</div>
+<!-- [e] Wrapper -->
+
+<script>
+  window.Promise ||
+	document.write(
+	  '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
+	)
+  window.Promise ||
+	document.write(
+	  '<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>'
+	)
+  window.Promise ||
+	document.write(
+	  '<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>'
+	)
+</script>
+<script src="../js/apexcharts.js"></script>
+
+<script src="../js/admin.js"></script>
+
+<script>
+$(document).ready(function () {
+	//전체체크
+	$("input[name=dataChk_all]").click(function(){
+		if ($(this).is(':checked')) {
+			$("input[name=dataChk]").prop("checked", true);
+		} else {
+			$("input[name=dataChk]").prop("checked", false);
+		}
+	});
+
+	//파이차트
+	var options = {
+          series: [40, 30, 30],
+          chart: {
+          width: 400,
+          type: 'pie',
+        },
+        labels: ['보통주, 우선주 동시보유', '우선주만 보유', '보통주만 보유'],
+		colors: ["#e05439", "#f16d23", "#fe8e22"],
+		legend: {
+			position: 'bottom',
+			horizontalAlign: 'left',
+			fontSize: '15px',
+			width: 350,
+			itemMargin: {
+			  horizontal: 10,
+			  vertical: 0
+			},
+			offsetX: 30,
+			markers: {
+			  width: 12,
+			  height: 12,
+			  strokeWidth: 0,
+			  offsetX: '-4px',
+			  radius: 0
+
+			},
+		},
+		plotOptions: {
+		  pie: {
+			size: 200,
+			startAngle: 20,
+			expandOnClick: true,
+			offsetX: 0,
+			offsetY: 0,
+			customScale: 1,
+			dataLabels: {
+				offset: -10,
+				//minAngleToShowLabel: 10
+			}
+		     
+		  }
+		},
+		dataLabels: {
+		  enabled: true,
+		  formatter: function (val, opts) {
+			  return val + '%'
+		  },
+		  textAnchor: 'middle',
+		  distributed: false,
+		  
+		  style: {
+			  fontSize: '16px',
+			  fontFamily: 'Helvetica, Arial, sans-serif',
+			  fontWeight: 'bold',
+			  colors: ['#fff']
+		  },
+		  dropShadow: {
+			  enabled: false
+		  }
+		}
+    
+	};
+
+	var chart = new ApexCharts(document.querySelector("#chart"), options);
+	chart.render();
+
+	//파이차트2
+	var options2 = {
+          series: [20, 20, 20, 10, 10, 20],
+          chart: {
+          width: 400,
+          type: 'pie',
+        },
+        labels: ['만 14세미만', '만14세 제외 20대 미만', '30대', '40대', '50대','60대'],
+		colors: ["#e05439", "#f16d23", "#fe8e22","#feb23a","#feca76","#ffe2b6"],
+		legend: {
+			position: 'bottom',
+			horizontalAlign: 'left',
+			fontSize: '15px',
+			width: 350,
+			itemMargin: {
+			  horizontal: 10,
+			  vertical: 0
+			},
+			offsetX: 30,
+			markers: {
+			  width: 12,
+			  height: 12,
+			  strokeWidth: 0,
+			  offsetX: '-4px',
+			  radius: 0
+
+			},
+		},
+		plotOptions: {
+		  pie: {
+			startAngle: 20,
+			expandOnClick: true,
+			offsetX: 0,
+			offsetY: 0,
+			customScale: 1,
+			dataLabels: {
+				offset: -10,
+				//minAngleToShowLabel: 10
+			}
+		     
+		  }
+		},
+		dataLabels: {
+		  enabled: true,
+		  formatter: function (val, opts) {
+			  return val + '%'
+		  },
+		  textAnchor: 'middle',
+		  distributed: false,
+		  
+		  style: {
+			  fontSize: '16px',
+			  fontFamily: 'Helvetica, Arial, sans-serif',
+			  fontWeight: 'bold',
+			  colors: ['#fff']
+		  },
+		  dropShadow: {
+			  enabled: false
+		  }
+		}
+    
+	};
+
+	var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+	chart2.render();
+
+	//막대그래프
+	var options3 = {
+		series: [{
+		  name: '보통주',
+		  data: [70, 60, 50, 40]},
+		  {name: '우선주',
+		  data: [120, 130, 120, 100]
+		}],
+		  chart: {
+		  type: 'bar',
+		  width: 810,
+		  toolbar: {
+			show: false
+		  }
+		},
+		colors : ['#99e0e6','#3d95df'],
+		plotOptions: {
+		  bar: {
+			horizontal: false,
+			columnWidth: '55%'
+		  },
+		},
+		dataLabels: {
+		  enabled: false
+		},
+		stroke: {
+		  show: true,
+		  width: 2,
+		  colors: ['transparent']
+		},
+		legend: {
+			 height: 20,
+			 offsetY:5,
+			 fontSize: '13px',
+			 labels: {
+				  colors: '#858585'
+			  },
+			  itemMargin: {
+				  horizontal: 10
+			  }
+		},
+		xaxis: {
+		  categories: ['1분기', '2분기', '3분기', '4분기'],
+		  labels: {
+			  offsetY:0,
+			  style: {
+				 fontSize: '16px'
+			  }
+			}
+		},
+		yaxis: {
+		  title: {
+			text: ''
+		  },
+		  labels: {
+			  show: true,
+			  offsetY: 5,
+			  style: {
+				 fontSize: '16px'
+			  }
+		   },
+		   tickAmount: 4,
+		   min:0
+		},
+		fill: {
+		  opacity: 1
+	  }
+	};
+
+	var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+	chart3.render();
+
+});
+</script>
+</body>
+</html>
